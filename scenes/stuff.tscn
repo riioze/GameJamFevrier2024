@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://vpqhsiin2c57"]
+
+[ext_resource type="Script" path="res://scripts/rigid_follow_node.gd" id="1_1kpwj"]
+[ext_resource type="Script" path="res://scripts/object/stuff.gd" id="1_cs0cg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78srw"]
+size = Vector2(60, 60)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rcjph"]
+size = Vector2(60, 60)
+
+[node name="Stuff" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_cs0cg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_78srw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_rcjph")
+
+[node name="RigidFollowNode" type="Node" parent="."]
+script = ExtResource("1_1kpwj")
+speed = 100000.0
