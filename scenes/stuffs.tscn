@@ -16,9 +16,6 @@ script = ExtResource("1_adkaj")
 followed = NodePath("../../Cursor")
 speed = 1000.0
 
-[node name="stuff2" parent="." instance=ExtResource("1_2task")]
-position = Vector2(290, 157)
-
 [node name="Cursor" type="Node2D" parent="."]
 
 [node name="FollowCursor" type="Node2D" parent="Cursor"]

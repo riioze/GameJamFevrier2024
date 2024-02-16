@@ -12,9 +12,10 @@ size = Vector2(1920, 1080)
 
 [node name="Background" type="Sprite2D" parent="game"]
 modulate = Color(0.376471, 0.266667, 0.305882, 1)
+position = Vector2(960, 540)
 texture = SubResource("PlaceholderTexture2D_h28pv")
 
-[node name="Camera2D" type="Camera2D" parent="game"]
+[node name="Camera2D" type="Camera2D" parent="game/Background"]
 
 [node name="arms" parent="game" instance=ExtResource("2_2nug3")]
 
