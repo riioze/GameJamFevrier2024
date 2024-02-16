@@ -1,3 +1,34 @@
-[gd_scene format=3 uid="uid://dewgpxn4sdq1a"]
+[gd_scene load_steps=5 format=3 uid="uid://dewgpxn4sdq1a"]
+
+[ext_resource type="Script" path="res://scripts/arms/LeftHandRigidBody.gd" id="1_bejtx"]
+[ext_resource type="Script" path="res://scripts/arms/RightHandRigidBody.gd" id="2_5ttbs"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ot4j1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0t5f4"]
 
 [node name="arms" type="Node"]
+
+[node name="LeftHandRigidBody" type="RigidBody2D" parent="."]
+mass = 10.0
+gravity_scale = 0.0
+script = ExtResource("1_bejtx")
+
+[node name="LeftHandCollisionShape" type="CollisionPolygon2D" parent="LeftHandRigidBody"]
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftHandRigidBody"]
+position = Vector2(5, 5)
+scale = Vector2(50, 50)
+texture = SubResource("PlaceholderTexture2D_ot4j1")
+
+[node name="RIghtHandRigidBody" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("2_5ttbs")
+
+[node name="RightHandCollisionShape" type="CollisionPolygon2D" parent="RIghtHandRigidBody"]
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="RIghtHandRigidBody"]
+scale = Vector2(50, 50)
+texture = SubResource("PlaceholderTexture2D_0t5f4")
