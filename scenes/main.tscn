@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://w6urfwl08wuc"]
+[gd_scene load_steps=7 format=3 uid="uid://w6urfwl08wuc"]
 
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/object.tscn" id="1_vlfrj"]
 [ext_resource type="PackedScene" uid="uid://dewgpxn4sdq1a" path="res://scenes/arms.tscn" id="2_2nug3"]
-[ext_resource type="Script" path="res://scenes/arms/LeftArmScript.gd" id="3_t561l"]
+[ext_resource type="Script" path="res://scripts/arms/LeftHandRigidBody.gd" id="3_t561l"]
+[ext_resource type="Script" path="res://scripts/arms/RightHandRigidBody.gd" id="4_5vy6y"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxqf0"]
 
@@ -16,23 +17,27 @@
 
 [node name="arms" parent="game" instance=ExtResource("2_2nug3")]
 
-[node name="LeftArmRigidBody" type="RigidBody2D" parent="game/arms"]
+[node name="LeftHandRigidBody" type="RigidBody2D" parent="game/arms" node_paths=PackedStringArray("OTHER_ARM")]
 mass = 10.0
 gravity_scale = 0.0
 script = ExtResource("3_t561l")
+OTHER_ARM = NodePath("../RIghtHandRigidBody")
 
-[node name="LeftArmCollisionShape" type="CollisionPolygon2D" parent="game/arms/LeftArmRigidBody"]
-polygon = PackedVector2Array(0, 0, 0, 10, 10, 10, 10, 0)
+[node name="LeftHandCollisionShape" type="CollisionPolygon2D" parent="game/arms/LeftHandRigidBody"]
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="game/arms/LeftArmRigidBody"]
+[node name="Sprite2D" type="Sprite2D" parent="game/arms/LeftHandRigidBody"]
 position = Vector2(5, 5)
-scale = Vector2(10, 10)
+scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_yxqf0")
 
-[node name="RIghtArmRigidBody" type="RigidBody2D" parent="game/arms"]
+[node name="RIghtHandRigidBody" type="RigidBody2D" parent="game/arms"]
+gravity_scale = 0.0
+script = ExtResource("4_5vy6y")
 
-[node name="RightArmCollisionShape" type="CollisionPolygon2D" parent="game/arms/RIghtArmRigidBody"]
-polygon = PackedVector2Array(0, 0, 10, 0, 10, 10, 10, 0)
+[node name="RightHandCollisionShape" type="CollisionPolygon2D" parent="game/arms/RIghtHandRigidBody"]
+polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="game/arms/RIghtArmRigidBody"]
+[node name="Sprite2D" type="Sprite2D" parent="game/arms/RIghtHandRigidBody"]
+scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_hc8sf")

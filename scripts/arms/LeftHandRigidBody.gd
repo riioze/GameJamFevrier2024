@@ -13,8 +13,11 @@ func _ready():
 func _process(delta):
 	pass
 	
-	
+func _integrate_forces(state):
+	rotation_degrees = 0	
 
 func _input(event):
 	set_linear_velocity(SPEED*Input.get_vector("MoveLeftArmToLeft","MoveLeftArmToRight","MoveLeftArmToTop","MoveLeftArmToBottom"))
 
+func _collide_other_arm(body):
+	print("collided")
