@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://w6urfwl08wuc"]
+[gd_scene load_steps=8 format=3 uid="uid://w6urfwl08wuc"]
 
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuffs.tscn" id="1_vlfrj"]
 [ext_resource type="PackedScene" uid="uid://dewgpxn4sdq1a" path="res://scenes/arms.tscn" id="2_2nug3"]
 [ext_resource type="Script" path="res://scripts/arms/LeftHandRigidBody.gd" id="3_t561l"]
 [ext_resource type="Script" path="res://scripts/arms/RightHandRigidBody.gd" id="4_5vy6y"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h28pv"]
+size = Vector2(1920, 1080)
+
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_yxqf0"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hc8sf"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h28pv"]
-size = Vector2(1920, 1080)
 
 [node name="main" type="Node"]
 
@@ -21,8 +21,6 @@ modulate = Color(0.376471, 0.266667, 0.305882, 1)
 texture = SubResource("PlaceholderTexture2D_h28pv")
 
 [node name="Camera2D" type="Camera2D" parent="game"]
-
-[node name="objects" parent="game" instance=ExtResource("1_vlfrj")]
 
 [node name="arms" parent="game" instance=ExtResource("2_2nug3")]
 
@@ -50,3 +48,5 @@ polygon = PackedVector2Array(0, 0, 0, 50, 50, 50, 50, 0)
 [node name="Sprite2D" type="Sprite2D" parent="game/arms/RIghtHandRigidBody"]
 scale = Vector2(50, 50)
 texture = SubResource("PlaceholderTexture2D_hc8sf")
+
+[node name="stuffs" parent="game" instance=ExtResource("1_vlfrj")]
