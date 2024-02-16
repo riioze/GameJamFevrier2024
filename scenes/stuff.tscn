@@ -10,6 +10,8 @@ size = Vector2(60, 60)
 size = Vector2(60, 60)
 
 [node name="Stuff" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
 gravity_scale = 0.0
 script = ExtResource("1_cs0cg")
 

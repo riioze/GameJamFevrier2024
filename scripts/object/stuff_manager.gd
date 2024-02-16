@@ -8,6 +8,7 @@ var table_height : float = 1080
 func _ready():
 	stuff_list = make_stuff_list(10)
 	stuff_initial_position_list = make_position_list(10)
+	place_stuff(stuff_list,stuff_initial_position_list)
 	
 func _process(delta):
 	pass
@@ -22,11 +23,11 @@ func make_position_list(count) -> Array[Vector2]:
 		
 	return position_list
 	
-func place_stuff(stuff_list : Array[Stuff], stuff_position_list : Array[Vector2]) -> void:
+func place_stuff(stuff_list : Array[Stuff], position_list : Array[Vector2]) -> void:
 	var count : int = stuff_list.size()
 	
 	for i in range(count):
-		stuff_list[i].position = stuff_position_list[i]
+		stuff_list[i].position = position_list[i]
 	
 	
 func make_stuff_list(count : int) -> Array[Stuff]:
@@ -37,4 +38,5 @@ func make_stuff_list(count : int) -> Array[Stuff]:
 		
 func make_stuff() -> Stuff:
 	var new_stuff : Stuff = Stuff.new()
+	new_stuff.reparent(self)
 	return new_stuff
