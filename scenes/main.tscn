@@ -1,5 +1,12 @@
-[gd_scene format=3 uid="uid://w6urfwl08wuc"]
+[gd_scene load_steps=3 format=3 uid="uid://w6urfwl08wuc"]
+
+[ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/object.tscn" id="1_vlfrj"]
+[ext_resource type="PackedScene" uid="uid://dewgpxn4sdq1a" path="res://scenes/arms.tscn" id="2_2nug3"]
 
 [node name="main" type="Node"]
 
 [node name="game" type="Node" parent="."]
+
+[node name="object" parent="game" instance=ExtResource("1_vlfrj")]
+
+[node name="arms" parent="game" instance=ExtResource("2_2nug3")]
