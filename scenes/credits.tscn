@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgrujukuuwf0g"]
+
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_5px66"]
+[ext_resource type="Texture2D" uid="uid://desak23gxahwh" path="res://sprites/menu/CreditsScene.png" id="1_a7j04"]
+
+[node name="credits" type="Node"]
+script = ExtResource("1_5px66")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(960, 540)
+texture = ExtResource("1_a7j04")

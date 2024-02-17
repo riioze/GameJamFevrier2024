@@ -5,6 +5,7 @@ class_name Stuff extends RigidBody2D
 @onready var grade_sprite : Sprite2D = get_node("GradeSprite")
 @export_range(0,1) var table_friction : float = 0.2
 @export_range(0,1) var air_friction : float = 0.01
+@onready var defaultScale = scale.x
 
 var teleport_position : Vector2 = Vector2.ZERO
 var is_teleporting: bool = false
@@ -51,7 +52,8 @@ func hover():
 	new_scale = hover_scale
 
 func unhover():
-	new_scale = 1
+	print("unhover")
+	new_scale = defaultScale
 	
 func pick_up(hand : Hand):
 	is_picked_up = true
@@ -63,7 +65,7 @@ func let_go():
 	is_picked_up = false
 	follow_node.active = false
 	follow_node.followed = null
-	new_scale = 1
+	new_scale = defaultScale
 	
 	if has_method("let_go_bis"):
 		call("let_go_bis")
