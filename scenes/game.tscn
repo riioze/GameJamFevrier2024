@@ -1,19 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://7ce888h1fjw1"]
+[gd_scene load_steps=14 format=3 uid="uid://7ce888h1fjw1"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuff/stuffs.tscn" id="2_fvvv8"]
 [ext_resource type="PackedScene" path="res://scenes/sanity.tscn" id="3_wh5sc"]
+[ext_resource type="Texture2D" uid="uid://dhbqq03xkdxsg" path="res://sprites/stuff/Beef.png" id="3_uxc5r"]
+[ext_resource type="PackedScene" uid="uid://bmq8ca2ph2iry" path="res://scenes/sanity.tscn" id="3_wh5sc"]
+[ext_resource type="Texture2D" uid="uid://7ufvtrtnvcj8" path="res://sprites/stuff/Cocktail.png" id="4_0hyco"]
+[ext_resource type="Texture2D" uid="uid://bsb0f2xy546eg" path="res://sprites/stuff/Cucumber.png" id="5_1mrrm"]
+[ext_resource type="Texture2D" uid="uid://cbcrobav06m08" path="res://sprites/stuff/Eggplant.png" id="6_2pgfw"]
+[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="7_rod8f"]
+[ext_resource type="Texture2D" uid="uid://bq4kx1cqkdmqi" path="res://sprites/stuff/Ramen.png" id="8_epsgw"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
-[ext_resource type="Script" path="res://scripts/eyes.gd" id="9_kbkh5"]
+[ext_resource type="Texture2D" uid="uid://buhg28kmpjfgv" path="res://sprites/stuff/Strawberry.png" id="9_itkhf"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="9_siahs"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aeog0"]
-size = Vector2(1920, 1080)
+[ext_resource type="PackedScene" uid="uid://cp6luodis5shj" path="res://eyes.tscn" id="13_d4ts6"]
 
 [node name="game" type="Node"]
 script = ExtResource("1_3htwk")
 
 [node name="stuffs" parent="." instance=ExtResource("2_fvvv8")]
+texture_list = Array[Texture]([ExtResource("3_uxc5r"), ExtResource("4_0hyco"), ExtResource("5_1mrrm"), ExtResource("6_2pgfw"), ExtResource("7_rod8f"), ExtResource("8_epsgw"), ExtResource("9_itkhf")])
 
 [node name="sanity" parent="." instance=ExtResource("3_wh5sc")]
 
@@ -22,8 +28,4 @@ script = ExtResource("8_iq5pv")
 
 [node name="hands" parent="." instance=ExtResource("9_siahs")]
 
-[node name="Eyes" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 540)
-texture = SubResource("PlaceholderTexture2D_aeog0")
-script = ExtResource("9_kbkh5")
+[node name="Eyes" parent="." instance=ExtResource("13_d4ts6")]

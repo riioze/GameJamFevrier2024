@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cyj6fe6mcy18o" path="res://scenes/hands/arm.tscn" id="1_8jp7g"]
 [ext_resource type="Resource" uid="uid://bolgknadxovyf" path="res://resources/side/Right.tres" id="2_vliae"]
-[ext_resource type="Script" path="res://scenes/hands/clock.gd" id="3_phkl3"]
+[ext_resource type="Script" path="res://scripts/clock.gd" id="3_yq33q"]
 [ext_resource type="Texture2D" uid="uid://7ufvtrtnvcj8" path="res://sprites/stuff/Cocktail.png" id="4_8a4ai"]
 [ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="5_qlpxv"]
 [ext_resource type="Texture2D" uid="uid://bq4kx1cqkdmqi" path="res://sprites/stuff/Ramen.png" id="6_csskb"]
@@ -14,7 +14,7 @@
 [node name="Clock" type="Sprite2D" parent="LeftArm/Hand/HandSprite" index="0"]
 position = Vector2(0, 416)
 texture = ExtResource("5_qlpxv")
-script = ExtResource("3_phkl3")
+script = ExtResource("3_yq33q")
 texture_list = Array[Texture]([ExtResource("4_8a4ai"), ExtResource("5_qlpxv"), ExtResource("6_csskb")])
 
 [node name="RightArm" parent="." instance=ExtResource("1_8jp7g")]

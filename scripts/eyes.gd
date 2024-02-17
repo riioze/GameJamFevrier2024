@@ -1,13 +1,15 @@
-class_name Eyes extends Sprite2D
+class_name Eyes extends AnimatedSprite2D
 
 var closed_duration = 1
 
 func close() -> bool:
 	visible = true
-	await TimeManager.sleep(closed_duration)
+	play("close")
+	await TimeManager.sleep(1.5)
 	return true
 
 func open() -> bool:
-	await TimeManager.sleep(closed_duration)
+	play("open")
+	await TimeManager.sleep(1.5)
 	visible = false
 	return true
