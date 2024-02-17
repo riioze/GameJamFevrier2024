@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://m4j7y7aei1fe"]
+
+[ext_resource type="Texture2D" uid="uid://3fj5b5pvnp22" path="res://sprites/eyes/Eye1.png" id="1_3i6yt"]
+[ext_resource type="Texture2D" uid="uid://dv211ymivls2s" path="res://sprites/eyes/Eye2.png" id="2_4uki1"]
+[ext_resource type="Texture2D" uid="uid://dpnumr47fmypk" path="res://sprites/eyes/Eye3.png" id="3_lsq6m"]
+[ext_resource type="Texture2D" uid="uid://co7jyn3ottduh" path="res://sprites/eyes/Eye4.png" id="4_5yhgi"]
+[ext_resource type="Texture2D" uid="uid://0t8diwukta6k" path="res://sprites/eyes/Eye5.png" id="5_seqju"]
+[ext_resource type="Texture2D" uid="uid://gkexmbynr4sr" path="res://sprites/eyes/Eye6.png" id="6_j2vai"]
+[ext_resource type="Texture2D" uid="uid://df104figii2jf" path="res://sprites/eyes/Eye7.png" id="7_k8rbt"]
+[ext_resource type="Texture2D" uid="uid://rybd6dt0hvr4" path="res://sprites/eyes/Eye8.png" id="8_bw3vs"]
+[ext_resource type="Texture2D" uid="uid://blld3442x1irg" path="res://sprites/eyes/Eye9.png" id="9_ytnh7"]
+[ext_resource type="Texture2D" uid="uid://dbo4wokn5p8nq" path="res://sprites/eyes/Eye10.png" id="10_qeupk"]
+[ext_resource type="Texture2D" uid="uid://d2alvnv8xqaxr" path="res://sprites/eyes/Eye11.png" id="11_2sbwq"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3i6yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4uki1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lsq6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5yhgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_seqju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j2vai")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_k8rbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bw3vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ytnh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qeupk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2sbwq")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]

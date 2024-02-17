@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxb8aa2tvis0o"
-path="res://.godot/imported/RamenTop.png-20041035b037779ab582b11531ab9c8d.ctex"
+uid="uid://dhbqq03xkdxsg"
+path="res://.godot/imported/Beef.png-3ef8da18958c591263fca913121d1782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/stuff/RamenTop.png"
-dest_files=["res://.godot/imported/RamenTop.png-20041035b037779ab582b11531ab9c8d.ctex"]
+source_file="res://sprites/stuff/Beef.png"
+dest_files=["res://.godot/imported/Beef.png-3ef8da18958c591263fca913121d1782.ctex"]
 
 [params]
 

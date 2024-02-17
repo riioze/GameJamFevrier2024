@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://w6urfwl08wuc"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sj4ti"]
-size = Vector2(1920, 1080)
+[ext_resource type="Texture2D" uid="uid://bnt74ttfjn4rr" path="res://sprites/TableV1.png" id="1_8w7vx"]
 
 [node name="main" type="Node"]
 
@@ -9,7 +8,6 @@ size = Vector2(1920, 1080)
 position = Vector2(960, 540)
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.376471, 0.266667, 0.305882, 1)
 z_index = -100
 position = Vector2(960, 540)
-texture = SubResource("PlaceholderTexture2D_sj4ti")
+texture = ExtResource("1_8w7vx")
