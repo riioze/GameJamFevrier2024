@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dewgpxn4sdq1a"]
+[gd_scene load_steps=9 format=3 uid="uid://dewgpxn4sdq1a"]
 
 [ext_resource type="Script" path="res://scripts/arms/LeftHandRigidBody.gd" id="1_bejtx"]
 [ext_resource type="Script" path="res://scripts/arms/RightHandRigidBody.gd" id="2_5ttbs"]
@@ -11,9 +11,12 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6sskc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al3xv"]
+
 [node name="arms" type="Node"]
 
 [node name="LeftHandRigidBody" type="RigidBody2D" parent="."]
+collision_mask = 5
 mass = 10.0
 gravity_scale = 0.0
 script = ExtResource("1_bejtx")
@@ -26,16 +29,18 @@ polygon = PackedVector2Array(-100, -100, -100, 100, 100, 100, 100, -100)
 scale = Vector2(200, 200)
 texture = SubResource("PlaceholderTexture2D_ot4j1")
 
-[node name="RIghtHandRigidBody" type="RigidBody2D" parent="."]
+[node name="RightHandRigidBody" type="RigidBody2D" parent="."]
 position = Vector2(-210, 43)
+collision_mask = 9
+mass = 10.0
 gravity_scale = 0.0
 script = ExtResource("2_5ttbs")
 SPEED = 400
 
-[node name="RightHandCollisionShape" type="CollisionPolygon2D" parent="RIghtHandRigidBody"]
+[node name="RightHandCollisionShape" type="CollisionPolygon2D" parent="RightHandRigidBody"]
 polygon = PackedVector2Array(-100, -100, -100, 100, 100, 100, 100, -100)
 
-[node name="Sprite2D" type="Sprite2D" parent="RIghtHandRigidBody"]
+[node name="Sprite2D" type="Sprite2D" parent="RightHandRigidBody"]
 scale = Vector2(200, 200)
 texture = SubResource("PlaceholderTexture2D_0t5f4")
 
@@ -45,7 +50,7 @@ script = ExtResource("3_n6st4")
 HAND = NodePath("../LeftHandRigidBody")
 
 [node name="LeftHarmCollisionShape" type="CollisionPolygon2D" parent="LeftArmStaticBody"]
-polygon = PackedVector2Array(-30, 100, 30, 100, 30, 600, -30, 600)
+polygon = PackedVector2Array(-30, 120, 30, 120, 30, 600, -30, 600)
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftArmStaticBody"]
 position = Vector2(0, 350)
@@ -55,12 +60,37 @@ texture = SubResource("PlaceholderTexture2D_6sskc")
 [node name="RightArmStaticBody" type="StaticBody2D" parent="." node_paths=PackedStringArray("HAND")]
 position = Vector2(200, -20)
 script = ExtResource("4_di48s")
-HAND = NodePath("../RIghtHandRigidBody")
+HAND = NodePath("../RightHandRigidBody")
 
 [node name="RightHarmCollisionShape" type="CollisionPolygon2D" parent="RightArmStaticBody"]
-polygon = PackedVector2Array(-30, 100, 30, 100, 30, 600, -30, 600)
+polygon = PackedVector2Array(-30, 120, 30, 120, 30, 600, -30, 600)
 
 [node name="Sprite2D" type="Sprite2D" parent="RightArmStaticBody"]
 position = Vector2(0, 350)
 scale = Vector2(60, 500)
 texture = SubResource("PlaceholderTexture2D_6sskc")
+
+[node name="BoxArround" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="BoxArround"]
+polygon = PackedVector2Array(10, 0, 1920, 0, 1920, 1080, 0, 1080, 0, 0, 9, 0, 9, 1070, 1910, 1070, 1910, 10, 10, 10)
+
+[node name="RightHandBarrier" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightHandBarrier"]
+position = Vector2(800, 0)
+scale = Vector2(1e-05, 1080)
+shape = SubResource("RectangleShape2D_al3xv")
+one_way_collision_margin = 37.0
+
+[node name="LeftHandBarrier" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftHandBarrier"]
+position = Vector2(1120, 0)
+scale = Vector2(1e-05, 1080)
+shape = SubResource("RectangleShape2D_al3xv")
+one_way_collision_margin = 37.0

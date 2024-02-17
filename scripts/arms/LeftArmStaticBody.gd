@@ -13,6 +13,6 @@ func _integrate_forces(state):
 func _process(delta):
 	position = Vector2(HAND.position.x,HAND.position.y+100)
 	
-	var angle : float = ((HAND.position.x+1000)/1080)*(PI/8)
+	var angle : float =position.direction_to(Vector2(0,1080)).angle()-PI/2
 	
 	rotation = angle
