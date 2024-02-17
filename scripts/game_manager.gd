@@ -28,7 +28,7 @@ func process_round():
 	clock.reset()
 	hands_manager.activate(true)
 	await eyes.open()
-	await clock.run_clock(round_manager.recognition_duration)
+	await clock.run_clock(round_manager.ordering_duration)
 	await stuff_manager.check_stuff_list_positions()
 	print(score)
 	await TimeManager.sleep(1)
