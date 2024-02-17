@@ -33,5 +33,5 @@ func process_round():
 
 func loose():
 	print("You loose")
-	score_manager.init()
+	SceneManager.load_score()
 	

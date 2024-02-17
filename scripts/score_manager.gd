@@ -10,14 +10,10 @@ var player_name : String = "test2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
-func init():
-	
 	in_score = true
 	
 	display_score()
-	
+
 	load_scores()
 	save_scores()
 
