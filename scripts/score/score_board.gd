@@ -2,11 +2,18 @@ class_name ScoreBoard extends Node2D
 
 @export var MAX_SCORES : int = 5
 var score_line
-
+@onready var input_ignored : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	score_line= preload("res://scenes/score_line.tscn") # Replace with function body.
+
+
+func _set_visible():
+	visible = true
+	TimeManager.sleep(1.0)
+	input_ignored = false
+	
 
 func set_score_board(scores : Dictionary):
 	for score_n in range(MAX_SCORES):
@@ -35,3 +42,11 @@ func get_best(scores : Dictionary) -> String:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func _input(event):
+	if input_ignored:
+		return
+	if event.is_action_pressed("Confirm"):
+		SceneManager.load_game()
+	elif event.is_action("Back"):
+		SceneManager.load_menu()

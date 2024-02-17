@@ -21,7 +21,7 @@ func _ready():
 
 func display_score():
 	var score_label: Label = $SettingName/Score/ScoreLabel
-	score_label.set_text("Score : " + str(score))
+	score_label.set_text(str(score))
 
 func load_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt",FileAccess.READ)
@@ -46,7 +46,7 @@ func _set_name(name_to_set: String):
 	name_set = true
 	var name_setting : Node = $SettingName
 	name_setting.queue_free()
-	score_board_node.visible = true
+	score_board_node._set_visible()
 
 
 func save_scores():
