@@ -18,11 +18,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*res://scripts/autoload/scene_manager.gd"
+TimeManager="*res://scripts/autoload/time_manager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -66,6 +68,10 @@ MoveRightArmToBottom={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_2="Stuff"
 
 [rendering]
 
