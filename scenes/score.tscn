@@ -1,8 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbbqpr32frnaj"]
+[gd_scene load_steps=5 format=3 uid="uid://dbbqpr32frnaj"]
 
 [ext_resource type="Script" path="res://scripts/score_manager.gd" id="1_m5jx5"]
+[ext_resource type="Script" path="res://scripts/score/player_name_input_manager.gd" id="2_o2h1k"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7uy4o"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ju7a"]
 
 [node name="score" type="Node"]
 script = ExtResource("1_m5jx5")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Score" type="Node2D" parent="."]
+position = Vector2(960, 300)
+scale = Vector2(800, 200)
+
+[node name="ScoreBackGround" type="Sprite2D" parent="Score"]
+texture = SubResource("PlaceholderTexture2D_7uy4o")
+
+[node name="ScoreLabel" type="Label" parent="Score"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "vxc"
+
+[node name="PlayerName" type="Node2D" parent="."]
+position = Vector2(960, 600)
+scale = Vector2(600, 150)
+script = ExtResource("2_o2h1k")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerName"]
+texture = SubResource("PlaceholderTexture2D_1ju7a")
+
+[node name="NameLabel" type="Label" parent="PlayerName"]
+offset_right = 40.0
+offset_bottom = 23.0

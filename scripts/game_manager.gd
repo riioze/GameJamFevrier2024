@@ -11,6 +11,7 @@ var black_screen_duration: float = 1
 
 func _ready():
 	process_round()
+	loose()
 	
 func loose_condition() -> bool:
 	return sanity_manager.sanity < sanity_manager.min_sanity
