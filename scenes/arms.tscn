@@ -18,7 +18,6 @@ mass = 10.0
 gravity_scale = 0.0
 script = ExtResource("1_bejtx")
 SPEED = 400
-STARTING_POS = Vector2(-500, 100)
 
 [node name="LeftHandCollisionShape" type="CollisionPolygon2D" parent="LeftHandRigidBody"]
 polygon = PackedVector2Array(-100, -100, -100, 100, 100, 100, 100, -100)
@@ -32,7 +31,6 @@ position = Vector2(-210, 43)
 gravity_scale = 0.0
 script = ExtResource("2_5ttbs")
 SPEED = 400
-STARTING_POS = Vector2(500, 100)
 
 [node name="RightHandCollisionShape" type="CollisionPolygon2D" parent="RIghtHandRigidBody"]
 polygon = PackedVector2Array(-100, -100, -100, 100, 100, 100, 100, -100)
