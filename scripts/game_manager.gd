@@ -25,7 +25,7 @@ func process_round():
 	await clock.run_clock(ordering_phase_duration)
 	stuff_manager.check_stuff_list_positions()
 	
-	if loose_condition() or true:
+	if loose_condition():
 		loose()
 		return
 		
