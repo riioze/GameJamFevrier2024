@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Grade" load_steps=2 format=3 uid="uid://dpp166k3o7m2k"]
+
+[ext_resource type="Script" path="res://scripts/resource/grade.gd" id="1_4ejv7"]
+
+[resource]
+script = ExtResource("1_4ejv7")
+name = "Bad"
+distance_floor = 960.0
+sanity_value = -10

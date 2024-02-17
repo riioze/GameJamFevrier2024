@@ -1,16 +1,26 @@
-extends Node
+class_name StuffManager extends Node
 
 var stuff_list : Array[Stuff] = []
 var initial_position_list : Array[Vector2] = []
 var table_width : float = 1920
 var table_height : float = 1080
 var stuff_count : int = 6
+
+signal incr_sanity_signal(grade : Grade)
+
 @onready var stuff_scene : Resource = preload("res://scenes/stuff.tscn")
 
-func _ready():
-	round_setup()
-	await TimeManager.sleep(1)
-	scramble_stuff(4)
+func check_stuff_list_positions():
+	for id in range(stuff_count):
+		check_stuff_position(id)
+
+func check_stuff_position(id : int):
+	var distance = stuff_list[id].position.distance_to(initial_position_list[id])
+	var grade_list : Array[Grade] = SceneManager.game.get_node("sanity").grade_list
+	for grade : Grade in grade_list:
+		if distance < grade.distance_floor:
+			incr_sanity_signal.emit(grade)
+			return
 	
 func scramble_stuff(count : int) -> void :
 	count = min(count,stuff_count)
@@ -19,8 +29,6 @@ func scramble_stuff(count : int) -> void :
 	for id in id_to_scramble_list:
 		stuff_list[id].teleport_position = random_table_position()
 		stuff_list[id].is_teleporting = true
-		
-		#stuff_list[id].global_position = Vector2.ZERO#random_table_position()
 		
 func get_random_list_id(count : int, list_count : int) -> Array[int]:
 	count = min(count,list_count)
