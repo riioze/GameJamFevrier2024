@@ -1,6 +1,7 @@
 class_name ScoreManager extends Node
 
-@onready var score_node: Node2D = $Score
+@onready var score_node: Node2D = $SettingName/Score
+@onready var score_board_node: ScoreBoard = $ScoreBoard
 
 var score_dict = {}
 var in_score : bool
@@ -13,15 +14,14 @@ var player_name : String = "test2"
 func _ready():
 	in_score = true
 	name_set = false
-	
+	score_board_node.visible = false
 	display_score()
 
 	load_scores()
 
 func display_score():
-	var score_label: Label = $Score/ScoreLabel
+	var score_label: Label = $SettingName/Score/ScoreLabel
 	score_label.set_text("Score : " + str(score))
-	print(score_label.text)
 
 func load_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt",FileAccess.READ)
@@ -39,9 +39,15 @@ func load_scores():
 
 func set_score(score_to_set : int):
 	score = score_to_set
+	
+	
 func _set_name(name_to_set: String):
 	player_name = name_to_set
 	name_set = true
+	var name_setting : Node = $SettingName
+	name_setting.queue_free()
+	score_board_node.visible = true
+
 
 func save_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt", FileAccess.WRITE)
@@ -53,10 +59,9 @@ func save_scores():
 		score_dict[player_name] = score
 		for name in score_dict.keys():
 			to_store+=name+','+str(score_dict[name])+';'
-			print(to_store)
 		to_store = to_store.left(to_store.length() -1)
-		
-	print(to_store)
+	score_board_node.set_score_board(score_dict)
+	
 	file.store_string(to_store)
 	file.close()
 

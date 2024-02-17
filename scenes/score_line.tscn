@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://64smh70ocii7"]
+
+[ext_resource type="Script" path="res://scripts/score/score_line.gd" id="1_e7q85"]
+
+[node name="ScoreLign" type="Node2D"]
+script = ExtResource("1_e7q85")
+
+[node name="NameLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Name"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 1.0
+offset_right = 103.0
+offset_bottom = 24.0
+text = "Score"

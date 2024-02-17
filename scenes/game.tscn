@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuff/stuffs.tscn" id="2_fvvv8"]
-[ext_resource type="PackedScene" uid="uid://bmq8ca2ph2iry" path="res://scenes/sanity.tscn" id="3_wh5sc"]
+[ext_resource type="PackedScene" path="res://scenes/sanity.tscn" id="3_wh5sc"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
 [ext_resource type="Script" path="res://scripts/eyes.gd" id="9_kbkh5"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="9_siahs"]

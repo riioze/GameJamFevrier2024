@@ -11,7 +11,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(player_name)
 	if player_name == "":
 		label.set_text("Your name")
 	else:
@@ -21,7 +20,6 @@ func _input(event):
 	
 	if event is InputEventKey and event.is_pressed():
 		var key_text : String = OS.get_keycode_string(event.keycode)
-		print(key_text)
 		if key_text == "Enter" and player_name.length()>=3:
 			var score_manager : ScoreManager = SceneManager.score
 			score_manager._set_name(player_name)

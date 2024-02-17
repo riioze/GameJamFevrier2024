@@ -1,40 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbqpr32frnaj"]
+[gd_scene load_steps=8 format=3 uid="uid://dbbqpr32frnaj"]
 
 [ext_resource type="Script" path="res://scripts/score_manager.gd" id="1_m5jx5"]
 [ext_resource type="Script" path="res://scripts/score/player_name_input_manager.gd" id="2_o2h1k"]
+[ext_resource type="Script" path="res://scripts/score/score_board.gd" id="3_4qytx"]
+[ext_resource type="PackedScene" uid="uid://64smh70ocii7" path="res://scenes/score_line.tscn" id="4_mxkuh"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7uy4o"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1ju7a"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vupaa"]
+
 [node name="score" type="Node"]
 script = ExtResource("1_m5jx5")
 
-[node name="Score" type="Node2D" parent="."]
+[node name="SettingName" type="Node" parent="."]
+
+[node name="Score" type="Node2D" parent="SettingName"]
 position = Vector2(960, 300)
 
-[node name="ScoreBackGround" type="Sprite2D" parent="Score"]
+[node name="ScoreBackGround" type="Sprite2D" parent="SettingName/Score"]
 scale = Vector2(800, 200)
 texture = SubResource("PlaceholderTexture2D_7uy4o")
 
-[node name="ScoreLabel" type="Label" parent="Score"]
+[node name="ScoreLabel" type="Label" parent="SettingName/Score"]
 offset_left = -400.0
 offset_top = -100.0
 offset_right = 400.0
 offset_bottom = 100.0
 theme_override_font_sizes/font_size = 146
 
-[node name="PlayerName" type="Node2D" parent="."]
+[node name="PlayerName" type="Node2D" parent="SettingName"]
 position = Vector2(960, 600)
 script = ExtResource("2_o2h1k")
 
-[node name="Sprite2D" type="Sprite2D" parent="PlayerName"]
+[node name="Sprite2D" type="Sprite2D" parent="SettingName/PlayerName"]
 scale = Vector2(600, 150)
 texture = SubResource("PlaceholderTexture2D_1ju7a")
 
-[node name="NameLabel" type="Label" parent="PlayerName"]
+[node name="NameLabel" type="Label" parent="SettingName/PlayerName"]
 offset_left = -300.0
 offset_top = -75.0
 offset_right = 297.0
 offset_bottom = 72.0
 theme_override_font_sizes/font_size = 110
+
+[node name="ScoreBoard" type="Node2D" parent="."]
+position = Vector2(960, 600)
+script = ExtResource("3_4qytx")
+
+[node name="ScoreBoardBackground" type="Sprite2D" parent="ScoreBoard"]
+scale = Vector2(800, 950)
+texture = SubResource("PlaceholderTexture2D_vupaa")
+
+[node name="TitleLabel" type="Label" parent="ScoreBoard"]
+offset_left = -391.0
+offset_top = -473.0
+offset_right = 390.0
+offset_bottom = -280.0
+theme_override_font_sizes/font_size = 141
+text = "Scoreboard
+"
+
+[node name="ScoreLign" parent="ScoreBoard" instance=ExtResource("4_mxkuh")]
+position = Vector2(-387, -282)
+scale = Vector2(7, 7)
