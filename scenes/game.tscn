@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://7ce888h1fjw1"]
+[gd_scene load_steps=9 format=3 uid="uid://7ce888h1fjw1"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuff/stuffs.tscn" id="2_fvvv8"]
 [ext_resource type="PackedScene" uid="uid://bmq8ca2ph2iry" path="res://scenes/sanity.tscn" id="3_wh5sc"]
+[ext_resource type="SpriteFrames" uid="uid://dg3d4jlayjqx" path="res://animation/bite_animation.tres" id="7_us1jw"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
+[ext_resource type="Script" path="res://scripts/transition/bite.gd" id="8_yk1h0"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="9_siahs"]
 [ext_resource type="PackedScene" uid="uid://cp6luodis5shj" path="res://eyes.tscn" id="13_d4ts6"]
 
@@ -19,4 +21,17 @@ script = ExtResource("8_iq5pv")
 
 [node name="hands" parent="." instance=ExtResource("9_siahs")]
 
-[node name="Eyes" parent="." instance=ExtResource("13_d4ts6")]
+[node name="Transitions" type="Node2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Eyes" parent="Transitions" instance=ExtResource("13_d4ts6")]
+position = Vector2(0, 0)
+
+[node name="Bite" type="AnimatedSprite2D" parent="Transitions"]
+visible = false
+z_index = 100
+sprite_frames = ExtResource("7_us1jw")
+animation = &"close"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("8_yk1h0")

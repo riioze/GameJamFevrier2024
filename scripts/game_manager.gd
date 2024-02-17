@@ -2,15 +2,13 @@ class_name GameManager extends Node
 
 @onready var stuff_manager : StuffManager = $stuffs
 @onready var sanity_manager : SanityManager = $sanity
-@onready var eyes : Eyes = $Eyes
 @onready var round_manager : RoundManager = $rounds
 @onready var score_manager : ScoreManager = SceneManager.score
-@onready var clock : Clock = $hands/RightArm/Hand/HandSprite/Clock
 @onready var hands_manager : HandsManager = $hands
 
-#var recognition_phase_duration: float = 3
-#var ordering_phase_duration: float = 3
-#var black_screen_duration: float = 0.5
+@onready var clock : Clock = $hands/RightArm/Hand/HandSprite/Clock
+@onready var eyes : Eyes = $Transitions/Eyes
+@onready var bite : Bite = $Transitions/Bite
 
 func _ready():
 	round_manager.new_round()
@@ -32,7 +30,8 @@ func process_round():
 	if loose_condition():
 		loose()
 		return
-		
+	
+	await bite.close()
 	round_manager.new_round()
 
 func loose():
