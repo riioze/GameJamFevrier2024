@@ -6,4 +6,4 @@
 script = ExtResource("1_sc2ht")
 name = "Good"
 distance_floor = 400.0
-sanity_value = 0
+sanity_value = 2

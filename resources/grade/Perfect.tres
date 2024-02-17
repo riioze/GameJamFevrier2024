@@ -6,4 +6,4 @@
 script = ExtResource("1_82jvg")
 name = "Perfect"
 distance_floor = 20.0
-sanity_value = 10
+sanity_value = 5
