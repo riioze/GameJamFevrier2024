@@ -6,4 +6,4 @@
 script = ExtResource("1_4ejv7")
 name = "Bad"
 distance_floor = 960.0
-sanity_value = -10
+sanity_value = -30
