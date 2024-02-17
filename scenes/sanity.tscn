@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmq8ca2ph2iry"]
+[gd_scene load_steps=7 format=3 uid="uid://bc5ifpx46h014"]
 
 [ext_resource type="Script" path="res://scripts/sanity_manager.gd" id="1_0mt0y"]
 [ext_resource type="Resource" uid="uid://ofk52ib5nfh7" path="res://resources/grade/Perfect.tres" id="2_p03q6"]
 [ext_resource type="Resource" uid="uid://do2muwwrnusnv" path="res://resources/grade/Good.tres" id="3_co6y1"]
 [ext_resource type="Resource" uid="uid://dpp166k3o7m2k" path="res://resources/grade/Bad.tres" id="4_x65k6"]
 [ext_resource type="Texture2D" uid="uid://84sdgaovk1fw" path="res://sprites/white_pixel.png" id="5_uc14n"]
+[ext_resource type="Texture2D" uid="uid://xpw2phet03wh" path="res://sprites/SanityTop.png" id="6_7x8tl"]
 
 [node name="sanity" type="Node"]
 script = ExtResource("1_0mt0y")
@@ -15,4 +16,12 @@ position = Vector2(960, 968)
 scale = Vector2(1000, 20)
 
 [node name="Sprite" type="Sprite2D" parent="Bar"]
+modulate = Color(0.490196, 0.654902, 1, 1)
+position = Vector2(-0.00100002, 3.4375)
+scale = Vector2(0.994, 1.575)
 texture = ExtResource("5_uc14n")
+
+[node name="SanityBorder" type="Sprite2D" parent="."]
+position = Vector2(953, 1034.5)
+scale = Vector2(0.8, 0.33)
+texture = ExtResource("6_7x8tl")

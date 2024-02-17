@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuff/stuffs.tscn" id="2_fvvv8"]
-[ext_resource type="PackedScene" path="res://scenes/sanity.tscn" id="3_wh5sc"]
+[ext_resource type="PackedScene" uid="uid://bc5ifpx46h014" path="res://scenes/sanity.tscn" id="3_wh5sc"]
 [ext_resource type="SpriteFrames" uid="uid://dg3d4jlayjqx" path="res://animation/bite_animation.tres" id="7_us1jw"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
 [ext_resource type="Script" path="res://scripts/transition/bite.gd" id="8_yk1h0"]
