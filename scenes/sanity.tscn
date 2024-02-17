@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmq8ca2ph2iry"]
+
+[ext_resource type="Script" path="res://scripts/sanity_manager.gd" id="1_0mt0y"]
+[ext_resource type="Resource" uid="uid://ofk52ib5nfh7" path="res://resources/grade/Perfect.tres" id="2_p03q6"]
+[ext_resource type="Resource" uid="uid://do2muwwrnusnv" path="res://resources/grade/Good.tres" id="3_co6y1"]
+[ext_resource type="Resource" uid="uid://dpp166k3o7m2k" path="res://resources/grade/Bad.tres" id="4_x65k6"]
+[ext_resource type="Texture2D" uid="uid://84sdgaovk1fw" path="res://sprites/white_pixel.png" id="5_uc14n"]
+
+[node name="sanity" type="Node"]
+script = ExtResource("1_0mt0y")
+grade_list = Array[Resource("res://scripts/resource/grade.gd")]([ExtResource("2_p03q6"), ExtResource("3_co6y1"), ExtResource("4_x65k6")])
+
+[node name="Bar" type="Node2D" parent="."]
+position = Vector2(960, 968)
+scale = Vector2(1000, 20)
+
+[node name="Sprite" type="Sprite2D" parent="Bar"]
+texture = ExtResource("5_uc14n")

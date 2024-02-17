@@ -45,10 +45,17 @@ func get_random_list_id(count : int, list_count : int) -> Array[int]:
 	return id_list
 	
 func round_setup() -> void:
+	clear_stuff()
 	stuff_count = min(texture_list.size(), stuff_count)
 	stuff_list = make_stuff_list(stuff_count)
 	initial_position_list = make_position_list(stuff_count)
 	place_stuff(stuff_list,initial_position_list)
+	
+func clear_stuff():
+	for stuff in stuff_list:
+		stuff.queue_free()
+	stuff_list.clear()
+	initial_position_list.clear()
 
 func random_table_position() -> Vector2 :
 	var position : Vector2 = Vector2.ZERO
