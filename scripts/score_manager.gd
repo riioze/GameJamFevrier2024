@@ -1,10 +1,10 @@
 class_name ScoreManager extends Node
 
-var score_node: Node
+@onready var score_node: Node2D = $Score
 
 var score_dict = {}
 var in_score : bool
-var score : int = 13
+var score : int = 0
 var player_name : String = "test2"
 
 
@@ -13,10 +13,18 @@ func _ready():
 	pass
 
 func init():
-	score_node = $"Score"
+	
 	in_score = true
+	
+	display_score()
+	
 	load_scores()
-	save_score()
+	save_scores()
+
+func display_score():
+	var score_label: Label = $Score/ScoreLabel
+	score_label.text = "Score : " + str(score)
+	print(score_label.text)
 
 func load_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt",FileAccess.READ)
@@ -32,8 +40,10 @@ func load_scores():
 		score_dict[name] = score
 		
 
+func set_score(score_to_set : int):
+	score = score_to_set
 
-func save_score():
+func save_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt", FileAccess.WRITE)
 	var to_store : String = ""
 	
