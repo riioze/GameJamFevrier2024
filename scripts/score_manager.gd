@@ -15,8 +15,6 @@ func _ready():
 	in_score = true
 	name_set = false
 	score_board_node.visible = false
-	display_score()
-
 	load_scores()
 
 func display_score():
@@ -67,4 +65,5 @@ func save_scores():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if !(name_set):
+		display_score()
