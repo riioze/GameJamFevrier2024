@@ -17,3 +17,5 @@ build
 
 XTRA
 save_game.txt
+*.exe
+Ex-position.pck
