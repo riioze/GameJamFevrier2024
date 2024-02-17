@@ -2,7 +2,6 @@ extends RigidBody2D
 
 @export var SPEED : int = 100
 @export var STARTING_POS : Vector2 = Vector2(1000,100)
-@export var OTHER_ARM : RigidBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
