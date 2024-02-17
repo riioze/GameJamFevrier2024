@@ -1,6 +1,9 @@
 class_name StuffButton extends Stuff
 
 @export var action_node : Node2D
+@export var action_type : action = action.Play
+
+enum action {Play, Quit, Mute, Credit}
 var min_action_distance : float = 150
 
 func let_go_bis():
@@ -8,7 +11,9 @@ func let_go_bis():
 	if distance < min_action_distance:
 		global_position = action_node.position
 		await TimeManager.sleep(0.5)
-		action()
+		exec_action()
 		
-func action():
-	SceneManager.load_game()
+func exec_action():
+	match action_type:
+		action.Quit : get_tree().quit()
+		_ : SceneManager.load_game()

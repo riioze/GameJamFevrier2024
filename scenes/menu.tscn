@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://35qsbc85q6sm"]
+[gd_scene load_steps=5 format=3 uid="uid://35qsbc85q6sm"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_sc1lf"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="2_hu80o"]
 [ext_resource type="PackedScene" uid="uid://bciqjxdj147b1" path="res://scenes/stuff/menu_stuff.tscn" id="3_8pch8"]
+[ext_resource type="Texture2D" uid="uid://duqn655edj1ly" path="res://sprites/menu/Menu.png" id="4_sltmp"]
 
 [node name="menu" type="Node"]
 script = ExtResource("1_sc1lf")
@@ -10,3 +11,8 @@ script = ExtResource("1_sc1lf")
 [node name="hands" parent="." instance=ExtResource("2_hu80o")]
 
 [node name="MenuStuff" parent="." instance=ExtResource("3_8pch8")]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(960, 540)
+texture = ExtResource("4_sltmp")

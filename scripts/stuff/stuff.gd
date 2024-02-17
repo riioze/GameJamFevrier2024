@@ -21,8 +21,8 @@ var new_scale : float :
 		get_child(1).scale = Vector2.ONE * value
 		new_scale = value
 		
-@export var hover_scale : float = 1.5
-@export var pickup_scale : float = 2
+var hover_scale : float = 1.1
+var pickup_scale : float = 1.2
 @onready var follow_node : RigidFollowNode = $RigidFollowNode
 
 var is_picked_up : bool = false

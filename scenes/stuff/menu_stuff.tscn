@@ -1,18 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://bciqjxdj147b1"]
+[gd_scene load_steps=8 format=3 uid="uid://bciqjxdj147b1"]
 
 [ext_resource type="Script" path="res://scripts/menu_stuff.gd" id="1_7ujjp"]
 [ext_resource type="PackedScene" uid="uid://c10ad6r75j0st" path="res://scenes/stuff/stuff_button.tscn" id="2_d7lhk"]
+[ext_resource type="Texture2D" uid="uid://d24gohv8inf8x" path="res://sprites/menu/buttons/PlayButtons.png" id="3_nd5cs"]
+[ext_resource type="Texture2D" uid="uid://cem2yi77v8p7u" path="res://sprites/menu/buttons/QuitButtons.png" id="4_2nfrg"]
+[ext_resource type="Texture2D" uid="uid://dxgtk4c2pwxsr" path="res://sprites/menu/buttons/CreditsButtons.png" id="5_1gth0"]
+[ext_resource type="Texture2D" uid="uid://eg0tgqlmu5ep" path="res://sprites/menu/buttons/MuteButtons.png" id="6_iqpeq"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tferg"]
 size = Vector2(150, 150)
 
 [node name="MenuStuff" type="Node" node_paths=PackedStringArray("stuff_list")]
 script = ExtResource("1_7ujjp")
-stuff_list = [NodePath("StartButton")]
+stuff_list = [NodePath("StartButton"), NodePath("QuitButton"), NodePath("CreditButton"), NodePath("MuteButton")]
+
+[node name="Action" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(970, 424)
+texture = SubResource("PlaceholderTexture2D_tferg")
 
 [node name="StartButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
 action_node = NodePath("../Action")
 
-[node name="Action" type="Sprite2D" parent="."]
-position = Vector2(970, 535)
-texture = SubResource("PlaceholderTexture2D_tferg")
+[node name="Sprite2D" parent="StartButton" index="1"]
+texture = ExtResource("3_nd5cs")
+
+[node name="QuitButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
+position = Vector2(451, 699)
+action_node = NodePath("../Action")
+action_type = 1
+
+[node name="Sprite2D" parent="QuitButton" index="1"]
+texture = ExtResource("4_2nfrg")
+
+[node name="CreditButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
+position = Vector2(1506, 726)
+action_node = NodePath("../Action")
+action_type = 3
+
+[node name="Sprite2D" parent="CreditButton" index="1"]
+texture = ExtResource("5_1gth0")
+
+[node name="MuteButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
+position = Vector2(1551, 333)
+action_node = NodePath("../Action")
+action_type = 2
+
+[node name="Sprite2D" parent="MuteButton" index="1"]
+texture = ExtResource("6_iqpeq")
+
+[editable path="StartButton"]
+[editable path="QuitButton"]
+[editable path="CreditButton"]
+[editable path="MuteButton"]

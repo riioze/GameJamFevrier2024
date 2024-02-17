@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuff/stuffs.tscn" id="2_fvvv8"]
-[ext_resource type="PackedScene" path="res://scenes/sanity.tscn" id="3_wh5sc"]
 [ext_resource type="Texture2D" uid="uid://dhbqq03xkdxsg" path="res://sprites/stuff/Beef.png" id="3_uxc5r"]
 [ext_resource type="PackedScene" uid="uid://bmq8ca2ph2iry" path="res://scenes/sanity.tscn" id="3_wh5sc"]
 [ext_resource type="Texture2D" uid="uid://7ufvtrtnvcj8" path="res://sprites/stuff/Cocktail.png" id="4_0hyco"]

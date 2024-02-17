@@ -1,11 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjiujhb3mbxhn"]
+[gd_scene load_steps=13 format=3 uid="uid://bjiujhb3mbxhn"]
 
 [ext_resource type="PackedScene" uid="uid://cyj6fe6mcy18o" path="res://scenes/hands/arm.tscn" id="1_8jp7g"]
 [ext_resource type="Resource" uid="uid://bolgknadxovyf" path="res://resources/side/Right.tres" id="2_vliae"]
 [ext_resource type="Script" path="res://scripts/clock.gd" id="3_yq33q"]
-[ext_resource type="Texture2D" uid="uid://7ufvtrtnvcj8" path="res://sprites/stuff/Cocktail.png" id="4_8a4ai"]
-[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="5_qlpxv"]
-[ext_resource type="Texture2D" uid="uid://bq4kx1cqkdmqi" path="res://sprites/stuff/Ramen.png" id="6_csskb"]
+[ext_resource type="Texture2D" uid="uid://btjlx01r04010" path="res://sprites/watch/WatchFrame1.png" id="4_ocoh7"]
+[ext_resource type="Texture2D" uid="uid://bheymwp5e4llv" path="res://sprites/watch/WatchFrame2.png" id="5_onse4"]
+[ext_resource type="Texture2D" uid="uid://byiqsa4od2tf2" path="res://sprites/watch/WatchFrame3.png" id="6_0nwty"]
+[ext_resource type="Texture2D" uid="uid://dy5wktylo86j5" path="res://sprites/watch/WatchFrame4.png" id="7_o3dnv"]
+[ext_resource type="Texture2D" uid="uid://co527diaxfj23" path="res://sprites/watch/WatchFrame5.png" id="8_qwm1r"]
+[ext_resource type="Texture2D" uid="uid://6nyq6irdporb" path="res://sprites/watch/WatchFrame6.png" id="9_stt50"]
+[ext_resource type="Texture2D" uid="uid://dpo08u614kweu" path="res://sprites/watch/WatchFrame7.png" id="10_oalgf"]
+[ext_resource type="Texture2D" uid="uid://ctf58jpnf47pi" path="res://sprites/watch/WatchFrame8.png" id="11_j12tk"]
+[ext_resource type="Texture2D" uid="uid://qeygxjdx4ki3" path="res://sprites/watch/WatchFrame9.png" id="12_85eio"]
 
 [node name="hands" type="Node"]
 
@@ -13,9 +19,9 @@
 
 [node name="Clock" type="Sprite2D" parent="LeftArm/Hand/HandSprite" index="0"]
 position = Vector2(0, 416)
-texture = ExtResource("5_qlpxv")
+texture = ExtResource("4_ocoh7")
 script = ExtResource("3_yq33q")
-texture_list = Array[Texture]([ExtResource("4_8a4ai"), ExtResource("5_qlpxv"), ExtResource("6_csskb")])
+texture_list = Array[Texture]([ExtResource("4_ocoh7"), ExtResource("5_onse4"), ExtResource("6_0nwty"), ExtResource("7_o3dnv"), ExtResource("8_qwm1r"), ExtResource("9_stt50"), ExtResource("10_oalgf"), ExtResource("11_j12tk"), ExtResource("12_85eio")])
 
 [node name="RightArm" parent="." instance=ExtResource("1_8jp7g")]
 
