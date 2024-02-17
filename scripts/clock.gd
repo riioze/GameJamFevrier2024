@@ -14,7 +14,7 @@ func run_clock(duration : float) -> bool:
 		
 	for tex in texture_list:
 		texture = tex
-		#AudioManager.play("ClockSound.mp3")
+		AudioManager.play("TicTac.mp3")
 		await TimeManager.sleep(duration/texture_count)
 		
 	return true

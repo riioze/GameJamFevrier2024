@@ -4,7 +4,9 @@ var stuff_list : Array[Stuff] = []
 var initial_position_list : Array[Vector2] = []
 var table_width : float = 1920
 var table_height : float = 1080
+var table_margin : float = 70
 var stuff_count : int = 6
+var stuff_padding : float = 250
 #@onready var round_manager : RoundManager = SceneManager.game.round_manager
 signal incr_sanity_signal(grade : Grade)
 
@@ -36,7 +38,8 @@ func scramble_stuff(count : int) -> void :
 	var id_to_scramble_list : Array[int] = get_random_list_id(count,stuff_count)
 	
 	for id in id_to_scramble_list:
-		stuff_list[id].new_position = random_table_position()
+		var new_position = random_table_position()
+		stuff_list[id].new_position = new_position
 		#stuff_list[id].is_teleporting = true
 		
 func get_random_list_id(count : int, list_count : int) -> Array[int]:
@@ -53,6 +56,7 @@ func get_random_list_id(count : int, list_count : int) -> Array[int]:
 	
 func round_setup(count) -> void:
 	clear_stuff()
+	count = 20
 	stuff_count = min(texture_list.size(), count)
 	stuff_list = make_stuff_list(stuff_count)
 	initial_position_list = make_position_list(stuff_count)
@@ -66,14 +70,27 @@ func clear_stuff():
 
 func random_table_position() -> Vector2 :
 	var position : Vector2 = Vector2.ZERO
-	position.x = randf_range(0,table_width)
-	position.y = randf_range(0,table_height)
+	position.x = randf_range(table_margin,table_width-table_margin)
+	position.y = randf_range(table_margin,table_height-table_margin)
 	return position
+
+func lowest_distance(position,pos_list):
+	var lowest = position.distance_to(pos_list[0]) 
+	for pos in pos_list:
+		var distance = position.distance_to(pos)
+		lowest = min(lowest, distance)
+	return lowest
 	
 func make_position_list(count) -> Array[Vector2]:
 	var position_list : Array[Vector2] = []
 	for i in range(count):
 		var position : Vector2 = random_table_position()
+		if(position_list.size() > 0):
+			var dist = lowest_distance(position,position_list)
+			while dist < stuff_padding:
+				#print(dist)
+				position = random_table_position()
+				dist = lowest_distance(position,position_list)
 		position_list.append(position)
 	
 	return position_list

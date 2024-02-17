@@ -1,11 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c10ad6r75j0st"]
 
 [ext_resource type="Script" path="res://scripts/stuff/stuff_button.gd" id="1_1qm7u"]
-[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/Kiwi.png" id="2_doj3s"]
 [ext_resource type="Script" path="res://scripts/node/rigid_follow_node.gd" id="3_288r1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgi8a"]
 radius = 100.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xc28n"]
+load_path = "res://.godot/imported/Kiwi.png-334eb210a5ad29ea6dca43c1936bef7e.ctex"
 
 [node name="StuffButton" type="RigidBody2D"]
 position = Vector2(438, 349)
@@ -18,7 +20,7 @@ script = ExtResource("1_1qm7u")
 shape = SubResource("CircleShape2D_vgi8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_doj3s")
+texture = SubResource("CompressedTexture2D_xc28n")
 
 [node name="RigidFollowNode" type="Node" parent="."]
 script = ExtResource("3_288r1")

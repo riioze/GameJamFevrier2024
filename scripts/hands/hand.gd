@@ -116,7 +116,7 @@ func let_go():
 	
 func pick_up():
 	if closest_stuff == null or picked_stuff != null : return
-	print("pick up")
+	#print("pick up")
 	AudioManager.play("GrabSound.mp3", 1, 0, 0.2)
 	picked_stuff = closest_stuff
 	picked_stuff.pick_up(self)
