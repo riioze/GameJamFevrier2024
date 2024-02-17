@@ -14,13 +14,13 @@ enum hand_side {Left, Right}
 
 @export var side : Side
 
-var speed : float = 50000
+var speed : float = 70000
 
 var teleport_position : Vector2 = Vector2.ZERO
 var is_teleporting: bool = false
 
-var forearm_lenght : float = 700
-var arm_lenght : float = 700
+var forearm_lenght : float = 600
+var arm_lenght : float = 675
 
 @onready var stuff_manager : Node #= SceneManager.game.get_node("stuffs")
 var closest_stuff : Stuff

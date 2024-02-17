@@ -2,6 +2,7 @@ class_name Stuff extends RigidBody2D
 
 #@export var texture_list : Array[Texture]
 @onready var sprite_node : Sprite2D = $Sprite2D
+@onready var grade_sprite : Sprite2D = get_node("GradeSprite")
 @export_range(0,1) var table_friction : float = 0.2
 @export_range(0,1) var air_friction : float = 0.01
 

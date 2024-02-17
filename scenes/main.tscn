@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://w6urfwl08wuc"]
+[gd_scene load_steps=3 format=3 uid="uid://w6urfwl08wuc"]
 
 [ext_resource type="Texture2D" uid="uid://bnt74ttfjn4rr" path="res://sprites/TableV1.png" id="1_8w7vx"]
+[ext_resource type="PackedScene" uid="uid://dan2b5whmyrik" path="res://scenes/sound.tscn" id="2_x14s0"]
 
 [node name="main" type="Node"]
 
@@ -11,3 +12,11 @@ position = Vector2(960, 540)
 z_index = -100
 position = Vector2(960, 540)
 texture = ExtResource("1_8w7vx")
+
+[node name="Sound" parent="." instance=ExtResource("2_x14s0")]
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Sounds" type="Node" parent="Audio"]
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]

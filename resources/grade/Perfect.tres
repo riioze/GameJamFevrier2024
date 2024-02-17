@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Grade" load_steps=2 format=3 uid="uid://ofk52ib5nfh7"]
+[gd_resource type="Resource" script_class="Grade" load_steps=3 format=3 uid="uid://ofk52ib5nfh7"]
 
 [ext_resource type="Script" path="res://scripts/resource/grade.gd" id="1_82jvg"]
+[ext_resource type="Texture2D" uid="uid://dajjy0bjr7qm" path="res://sprites/grade/Perfect.png" id="2_ag2by"]
 
 [resource]
 script = ExtResource("1_82jvg")
+sprite = ExtResource("2_ag2by")
 name = "Perfect"
 distance_floor = 20.0
 sanity_value = 10

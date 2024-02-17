@@ -15,12 +15,16 @@ signal incr_sanity_signal(grade : Grade)
 func check_stuff_list_positions():
 	for id in range(stuff_count):
 		check_stuff_position(id)
+		await TimeManager.sleep(0.25)
+	return true
 
 func check_stuff_position(id : int):
 	var distance = stuff_list[id].position.distance_to(initial_position_list[id])
 	var grade_list : Array[Grade] = SceneManager.game.get_node("sanity").grade_list
 	for grade : Grade in grade_list:
 		if distance < grade.distance_floor:
+			stuff_list[id].grade_sprite.texture = grade.sprite
+			stuff_list[id].grade_sprite.visible = true
 			incr_sanity_signal.emit(grade)
 			return
 	

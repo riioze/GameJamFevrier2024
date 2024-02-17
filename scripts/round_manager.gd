@@ -17,7 +17,7 @@ var day : int = 0
 # 1 new moving item every 3 days
 
 @export var recognition_duration : float = 5
-@export var ordering_duration : float = 10
+@export var ordering_duration : float = 15
 @export var stuff_count : int = 3
 @export var moving_stuff_count : int = 1
 

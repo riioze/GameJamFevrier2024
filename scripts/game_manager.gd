@@ -25,14 +25,14 @@ func process_round():
 	hands_manager.activate(true)
 	await eyes.open()
 	await clock.run_clock(round_manager.recognition_duration)
-	stuff_manager.check_stuff_list_positions()
+	await stuff_manager.check_stuff_list_positions()
+	await TimeManager.sleep(1)
 	
-	if loose_condition() or true:
+	if loose_condition():
 		loose()
 		return
 	
 	await bite.close()
-	round_manager.new_round()
 
 func loose():
 	print("You loose")

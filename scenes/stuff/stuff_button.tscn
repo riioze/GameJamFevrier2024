@@ -22,3 +22,5 @@ texture = ExtResource("2_doj3s")
 
 [node name="RigidFollowNode" type="Node" parent="."]
 script = ExtResource("3_288r1")
+
+[node name="GradeSprite" type="Sprite2D" parent="."]

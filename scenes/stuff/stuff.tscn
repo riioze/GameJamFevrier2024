@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://vpqhsiin2c57"]
+[gd_scene load_steps=6 format=3 uid="uid://vpqhsiin2c57"]
 
 [ext_resource type="Script" path="res://scripts/stuff/stuff.gd" id="1_3ceh0"]
 [ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/Kiwi.png" id="2_d4dj7"]
 [ext_resource type="Script" path="res://scripts/node/rigid_follow_node.gd" id="3_pxjvc"]
+[ext_resource type="Texture2D" uid="uid://dxgtk4c2pwxsr" path="res://sprites/menu/buttons/CreditsButtons.png" id="4_faprg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_be35m"]
 radius = 100.0
@@ -21,3 +22,8 @@ texture = ExtResource("2_d4dj7")
 
 [node name="RigidFollowNode" type="Node" parent="."]
 script = ExtResource("3_pxjvc")
+
+[node name="GradeSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(374, -228)
+texture = ExtResource("4_faprg")

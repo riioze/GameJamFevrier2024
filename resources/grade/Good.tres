@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Grade" load_steps=2 format=3 uid="uid://do2muwwrnusnv"]
+[gd_resource type="Resource" script_class="Grade" load_steps=3 format=3 uid="uid://do2muwwrnusnv"]
 
 [ext_resource type="Script" path="res://scripts/resource/grade.gd" id="1_sc2ht"]
+[ext_resource type="Texture2D" uid="uid://cteqisaf5wy35" path="res://sprites/grade/Good.png" id="2_5n4qy"]
 
 [resource]
 script = ExtResource("1_sc2ht")
+sprite = ExtResource("2_5n4qy")
 name = "Good"
 distance_floor = 400.0
 sanity_value = 0
