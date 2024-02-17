@@ -20,11 +20,16 @@ func _ready() -> void:
 	load_menu()
 	
 func load_menu():
+	if (score != null):
+		score.queue_free()
 	menu = menu_scene.instantiate()
 	add_child(menu)
 	
 func load_game():
-	menu.queue_free()
+	if (menu != null):
+		menu.queue_free()
+	if (score != null):
+		score.queue_free()
 	game = game_scene.instantiate()
 	add_child(game)
 	

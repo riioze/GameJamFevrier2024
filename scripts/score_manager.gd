@@ -46,7 +46,7 @@ func _set_name(name_to_set: String):
 	name_set = true
 	var name_setting : Node = $SettingName
 	name_setting.queue_free()
-	score_board_node.visible = true
+	score_board_node._set_visible()
 
 
 func save_scores():
