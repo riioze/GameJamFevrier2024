@@ -8,6 +8,8 @@ var stuff_count : int = 6
 
 signal incr_sanity_signal(grade : Grade)
 
+@export var texture_list : Array[Texture]
+
 @onready var stuff_scene : Resource = preload("res://scenes/stuff.tscn")
 
 func check_stuff_list_positions():
@@ -43,6 +45,7 @@ func get_random_list_id(count : int, list_count : int) -> Array[int]:
 	return id_list
 	
 func round_setup() -> void:
+	stuff_count = min(texture_list.size(), stuff_count)
 	stuff_list = make_stuff_list(stuff_count)
 	initial_position_list = make_position_list(stuff_count)
 	place_stuff(stuff_list,initial_position_list)
@@ -68,9 +71,15 @@ func place_stuff(stuff_list : Array[Stuff], position_list : Array[Vector2]) -> v
 		stuff_list[i].position = position_list[i]
 	
 func make_stuff_list(count : int) -> Array[Stuff]:
+	var texture_list_copy = texture_list.duplicate()
 	var new_stuff_list : Array[Stuff] = []
 	for i in range(count):
-		new_stuff_list.append(make_stuff())
+		var new_stuff : Stuff = make_stuff()
+		var texture_id : int = randi_range(0,texture_list_copy.size()-1)
+		var texture : Texture = texture_list_copy[texture_id]
+		texture_list_copy.remove_at(texture_id)
+		new_stuff.sprite_node.texture = texture 
+		new_stuff_list.append(new_stuff)
 	return new_stuff_list
 		
 func make_stuff() -> Stuff:

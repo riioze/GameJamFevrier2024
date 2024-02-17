@@ -1,28 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkjy1n2vkd507"]
 
-[ext_resource type="PackedScene" uid="uid://vpqhsiin2c57" path="res://scenes/stuff.tscn" id="1_2task"]
 [ext_resource type="Script" path="res://scripts/stuff/stuff_manager.gd" id="1_gbr6t"]
-[ext_resource type="Script" path="res://scripts/node/node_follow_cursor.gd" id="3_m20fo"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tw5gg"]
-size = Vector2(20, 20)
+[ext_resource type="Texture2D" uid="uid://7ufvtrtnvcj8" path="res://sprites/stuff/Cocktail.png" id="2_1pgm4"]
+[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="3_5fm6y"]
+[ext_resource type="Texture2D" uid="uid://bq4kx1cqkdmqi" path="res://sprites/stuff/Ramen.png" id="4_tj0mk"]
 
 [node name="stuffs" type="Node"]
 script = ExtResource("1_gbr6t")
-
-[node name="stuff" parent="." instance=ExtResource("1_2task")]
-
-[node name="RigidFollowNode" parent="stuff" index="2" node_paths=PackedStringArray("followed")]
-followed = NodePath("../../Cursor")
-speed = 1000.0
-
-[node name="Cursor" type="Node2D" parent="."]
-
-[node name="FollowCursor" type="Node2D" parent="Cursor"]
-script = ExtResource("3_m20fo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
-modulate = Color(1, 0, 0, 1)
-texture = SubResource("PlaceholderTexture2D_tw5gg")
-
-[editable path="stuff"]
+texture_list = Array[Texture]([ExtResource("2_1pgm4"), ExtResource("3_5fm6y"), ExtResource("4_tj0mk")])

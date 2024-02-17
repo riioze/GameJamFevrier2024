@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://6elxe5geii8t"]
+
+[ext_resource type="Script" path="res://scripts/node/node_follow_cursor.gd" id="1_3qw5s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tw5gg"]
+size = Vector2(20, 20)
+
+[node name="Cursor" type="Node2D"]
+
+[node name="FollowCursor" type="Node2D" parent="."]
+script = ExtResource("1_3qw5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = SubResource("PlaceholderTexture2D_tw5gg")

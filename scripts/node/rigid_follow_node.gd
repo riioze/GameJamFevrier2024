@@ -12,11 +12,13 @@ func _physics_process(delta):
 		_follow(delta)
 	
 func _follow(delta : float) -> void:
-	var distance = parent.position.distance_to(followed.position)
+	var pos1 = parent.global_position
+	var pos2 = followed.global_position
+	var distance = pos1.distance_to(pos2)
 	var target_velocity : Vector2 = Vector2.ZERO
 	
 	if approximation_distance < distance:
-		var diretion : Vector2 = parent.position.direction_to(followed.position)
+		var diretion : Vector2 = pos1.direction_to(pos2)
 		target_velocity = diretion * distance * speed * delta
 	
 	parent.linear_velocity = lerp(parent.linear_velocity, target_velocity, acceleration)

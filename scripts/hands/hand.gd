@@ -27,9 +27,15 @@ var closest_stuff : Stuff
 var old_closest_stuff : Stuff
 var picked_stuff : Stuff
 
-@export var pickup_distance : float = 50
+@export var pickup_distance : float = 150
+
+@export var default_texture : Texture
+@export var closed_texture : Texture
+@onready var sprite : Sprite2D = $"../HandSprite"
 
 func _ready():
+	sprite.flip_h = side.is_mirrored
+	sprite.texture = default_texture
 	hand_origin += side.multiplicator * Vector2(hand_separation_origin,0)
 	shoulder_origin += side.multiplicator * Vector2(shoulder_separation_origin,0)
 	teleport_position = hand_origin
@@ -72,10 +78,15 @@ func _process(delta):
 	
 	elbow_node.position = Math.circle_intersections(position,shoulder_origin,forearm_lenght,arm_lenght)[side.elbow_id]
 	
-	closest_stuff = get_closest_stuff()
-	if closest_stuff != old_closest_stuff:
-		if old_closest_stuff != null: old_closest_stuff.unhover()
-		if closest_stuff != null: closest_stuff.hover()
+	if picked_stuff == null:
+		closest_stuff = get_closest_stuff()
+		if closest_stuff != old_closest_stuff:
+			if old_closest_stuff != null: 
+				old_closest_stuff.unhover()
+				old_closest_stuff = null
+			if closest_stuff != null:
+				closest_stuff.hover()
+				old_closest_stuff = closest_stuff
 		
 func _physics_process(delta):
 	set_linear_velocity(delta*speed*input_direction)
@@ -90,8 +101,10 @@ func let_go():
 	if picked_stuff == null : return
 	picked_stuff.let_go()
 	picked_stuff = null
+	sprite.texture = default_texture
 	
 func pick_up():
 	if closest_stuff == null : return
-	closest_stuff.pick_up(self)
 	picked_stuff = closest_stuff
+	picked_stuff.pick_up(self)
+	sprite.texture = closed_texture
