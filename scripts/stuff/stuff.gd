@@ -66,3 +66,5 @@ func let_go():
 	follow_node.followed = null
 	new_scale = 1
 	
+	if has_method("let_go_bis"):
+		call("let_go_bis")

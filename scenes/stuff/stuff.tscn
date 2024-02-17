@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://vpqhsiin2c57"]
 
-[ext_resource type="Script" path="res://scripts/stuff/stuff.gd" id="1_sym8t"]
-[ext_resource type="Script" path="res://scripts/node/rigid_follow_node.gd" id="2_4fmqt"]
-[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="3_gadkx"]
+[ext_resource type="Script" path="res://scripts/stuff/stuff.gd" id="1_3ceh0"]
+[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="2_ogw5a"]
+[ext_resource type="Script" path="res://scripts/node/rigid_follow_node.gd" id="3_pxjvc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_be35m"]
 radius = 100.0
@@ -11,7 +11,7 @@ radius = 100.0
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_sym8t")
+script = ExtResource("1_3ceh0")
 hover_scale = 1.2
 pickup_scale = 1.2
 
@@ -19,7 +19,7 @@ pickup_scale = 1.2
 shape = SubResource("CircleShape2D_be35m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_gadkx")
+texture = ExtResource("2_ogw5a")
 
 [node name="RigidFollowNode" type="Node" parent="."]
-script = ExtResource("2_4fmqt")
+script = ExtResource("3_pxjvc")

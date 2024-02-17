@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bciqjxdj147b1"]
+
+[ext_resource type="Script" path="res://scripts/menu_stuff.gd" id="1_7ujjp"]
+[ext_resource type="PackedScene" uid="uid://c10ad6r75j0st" path="res://scenes/stuff/stuff_button.tscn" id="2_d7lhk"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tferg"]
+size = Vector2(150, 150)
+
+[node name="MenuStuff" type="Node" node_paths=PackedStringArray("stuff_list")]
+script = ExtResource("1_7ujjp")
+stuff_list = [NodePath("StartButton")]
+
+[node name="StartButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
+action_node = NodePath("../Action")
+
+[node name="Action" type="Sprite2D" parent="."]
+position = Vector2(970, 535)
+texture = SubResource("PlaceholderTexture2D_tferg")

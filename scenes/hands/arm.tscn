@@ -35,6 +35,7 @@ texture = SubResource("PlaceholderTexture2D_36pam")
 [node name="Hand" type="Node" parent="."]
 
 [node name="HandSprite" type="Sprite2D" parent="Hand"]
+z_index = 10
 texture = ExtResource("5_i2no6")
 
 [node name="NodeFollowNode" type="Node" parent="Hand/HandSprite" node_paths=PackedStringArray("followed")]

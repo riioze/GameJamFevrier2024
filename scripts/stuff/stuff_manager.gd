@@ -10,7 +10,7 @@ signal incr_sanity_signal(grade : Grade)
 
 @export var texture_list : Array[Texture]
 
-@onready var stuff_scene : Resource = preload("res://scenes/stuff.tscn")
+@onready var stuff_scene : Resource = preload("res://scenes/stuff/stuff.tscn")
 
 func check_stuff_list_positions():
 	for id in range(stuff_count):

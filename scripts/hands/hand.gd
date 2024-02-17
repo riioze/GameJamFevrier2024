@@ -22,7 +22,7 @@ var is_teleporting: bool = false
 var forearm_lenght : float = 700
 var arm_lenght : float = 700
 
-@onready var stuff_manager : StuffManager = SceneManager.game.get_node("stuffs")
+@onready var stuff_manager : Node #= SceneManager.game.get_node("stuffs")
 var closest_stuff : Stuff
 var old_closest_stuff : Stuff
 var picked_stuff : Stuff
@@ -50,6 +50,11 @@ func _integrate_forces(state):
 		state.set_transform(t)
 		
 func get_closest_stuff() -> Stuff:
+	if SceneManager.game != null:
+		stuff_manager = SceneManager.game.get_node("stuffs")
+	elif SceneManager.menu != null:
+		stuff_manager = SceneManager.menu.get_node("MenuStuff")
+		
 	var stuff_list = stuff_manager.stuff_list
 	if(stuff_list.size() == 0): return null
 	
