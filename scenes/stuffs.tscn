@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkjy1n2vkd507"]
 
 [ext_resource type="PackedScene" uid="uid://vpqhsiin2c57" path="res://scenes/stuff.tscn" id="1_2task"]
-[ext_resource type="Script" path="res://scripts/object/stuff_manager.gd" id="1_adkaj"]
-[ext_resource type="Script" path="res://scripts/node_follow_cursor.gd" id="4_al6j0"]
+[ext_resource type="Script" path="res://scripts/stuff/stuff_manager.gd" id="1_gbr6t"]
+[ext_resource type="Script" path="res://scripts/node/node_follow_cursor.gd" id="3_m20fo"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tw5gg"]
 size = Vector2(20, 20)
 
 [node name="stuffs" type="Node"]
-script = ExtResource("1_adkaj")
+script = ExtResource("1_gbr6t")
 
 [node name="stuff" parent="." instance=ExtResource("1_2task")]
 
@@ -19,7 +19,7 @@ speed = 1000.0
 [node name="Cursor" type="Node2D" parent="."]
 
 [node name="FollowCursor" type="Node2D" parent="Cursor"]
-script = ExtResource("4_al6j0")
+script = ExtResource("3_m20fo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cursor"]
 modulate = Color(1, 0, 0, 1)

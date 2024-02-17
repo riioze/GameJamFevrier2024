@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://cyj6fe6mcy18o"]
+
+[ext_resource type="Script" path="res://scripts/node/node_follow_node.gd" id="1_b8413"]
+[ext_resource type="Script" path="res://scripts/hands/hand.gd" id="1_exwob"]
+[ext_resource type="Script" path="res://scripts/hands/arm.gd" id="1_ppd22"]
+[ext_resource type="Resource" uid="uid://cx4debxr8x824" path="res://resources/side/Left.tres" id="2_l3emj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyjdw"]
+size = Vector2(30, 30)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_36pam"]
+size = Vector2(700, 30)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_df0e5"]
+size = Vector2(90, 90)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsm8y"]
+radius = 45.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_rkxan"]
+size = Vector2(50, 50)
+
+[node name="Arm" type="Node"]
+
+[node name="Forearm" type="Node2D" parent="." node_paths=PackedStringArray("joints")]
+visible = false
+script = ExtResource("1_ppd22")
+joints = [NodePath("../Hand/HandSprite"), NodePath("../Elbow/ElbowSprite")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Forearm"]
+shape = SubResource("RectangleShape2D_iyjdw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Forearm"]
+texture = SubResource("PlaceholderTexture2D_36pam")
+
+[node name="Hand" type="Node" parent="."]
+
+[node name="HandSprite" type="Sprite2D" parent="Hand"]
+texture = SubResource("PlaceholderTexture2D_df0e5")
+
+[node name="NodeFollowNode" type="Node" parent="Hand/HandSprite" node_paths=PackedStringArray("followed")]
+script = ExtResource("1_b8413")
+followed = NodePath("../../Body")
+
+[node name="Body" type="RigidBody2D" parent="Hand" node_paths=PackedStringArray("elbow_node")]
+collision_layer = 256
+collision_mask = 256
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_exwob")
+elbow_node = NodePath("../../Elbow/Body")
+side = ExtResource("2_l3emj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hand/Body"]
+shape = SubResource("CircleShape2D_hsm8y")
+
+[node name="Elbow" type="Node" parent="."]
+
+[node name="ElbowSprite" type="Sprite2D" parent="Elbow"]
+texture = SubResource("PlaceholderTexture2D_rkxan")
+
+[node name="NodeFollowNode" type="Node" parent="Elbow/ElbowSprite" node_paths=PackedStringArray("followed")]
+script = ExtResource("1_b8413")
+followed = NodePath("../../Body")
+
+[node name="Body" type="Node2D" parent="Elbow"]

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Side" load_steps=2 format=3 uid="uid://cx4debxr8x824"]
+
+[ext_resource type="Script" path="res://scripts/resource/side.gd" id="1_tmtm7"]
+
+[resource]
+script = ExtResource("1_tmtm7")
+name = "Left"
+is_mirrored = true

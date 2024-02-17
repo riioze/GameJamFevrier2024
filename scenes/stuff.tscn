@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://vpqhsiin2c57"]
 
-[ext_resource type="Script" path="res://scripts/rigid_follow_node.gd" id="1_1kpwj"]
-[ext_resource type="Script" path="res://scripts/object/stuff.gd" id="1_cs0cg"]
+[ext_resource type="Script" path="res://scripts/stuff/stuff.gd" id="1_sym8t"]
+[ext_resource type="Script" path="res://scripts/node/rigid_follow_node.gd" id="2_4fmqt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78srw"]
 size = Vector2(60, 60)
@@ -13,7 +13,7 @@ size = Vector2(60, 60)
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_cs0cg")
+script = ExtResource("1_sym8t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_78srw")
@@ -23,5 +23,5 @@ modulate = Color(0.235294, 0.733333, 0.592157, 1)
 texture = SubResource("PlaceholderTexture2D_rcjph")
 
 [node name="RigidFollowNode" type="Node" parent="."]
-script = ExtResource("1_1kpwj")
+script = ExtResource("2_4fmqt")
 speed = 100000.0

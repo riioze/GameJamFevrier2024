@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://7ce888h1fjw1"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
-[ext_resource type="PackedScene" uid="uid://dewgpxn4sdq1a" path="res://scenes/arms.tscn" id="2_66xsc"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuffs.tscn" id="3_uotv3"]
 [ext_resource type="Script" path="res://scripts/sanity_manager.gd" id="4_fmph6"]
 [ext_resource type="Resource" uid="uid://ofk52ib5nfh7" path="res://resources/grade/Perfect.tres" id="5_cvs2e"]
 [ext_resource type="Resource" uid="uid://do2muwwrnusnv" path="res://resources/grade/Good.tres" id="6_diick"]
 [ext_resource type="Resource" uid="uid://dpp166k3o7m2k" path="res://resources/grade/Bad.tres" id="7_3rfdo"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
+[ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="9_siahs"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h28pv"]
 size = Vector2(1920, 1080)
@@ -22,8 +22,6 @@ texture = SubResource("PlaceholderTexture2D_h28pv")
 
 [node name="Camera2D" type="Camera2D" parent="Background"]
 
-[node name="arms" parent="." instance=ExtResource("2_66xsc")]
-
 [node name="stuffs" parent="." instance=ExtResource("3_uotv3")]
 
 [node name="sanity" type="Node" parent="."]
@@ -32,3 +30,5 @@ grade_list = Array[Resource("res://scripts/resource/grade.gd")]([ExtResource("5_
 
 [node name="rounds" type="Node" parent="."]
 script = ExtResource("8_iq5pv")
+
+[node name="hands" parent="." instance=ExtResource("9_siahs")]

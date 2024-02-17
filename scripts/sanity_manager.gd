@@ -11,5 +11,5 @@ func _ready():
 	
 func incr_sanity(grade : Grade):
 	sanity += grade.sanity_value
-	print(grade.name, sanity)
+	#print(grade.name, sanity)
 	

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Side" load_steps=2 format=3 uid="uid://bolgknadxovyf"]
+
+[ext_resource type="Script" path="res://scripts/resource/side.gd" id="1_5x5at"]
+
+[resource]
+script = ExtResource("1_5x5at")
+name = "Right"
+hand_origin = Vector2(0, 0)
+shoulder_origin = Vector2(0, 0)
+is_mirrored = false

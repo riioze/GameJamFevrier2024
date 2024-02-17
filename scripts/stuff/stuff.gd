@@ -8,6 +8,10 @@ class_name Stuff extends RigidBody2D
 var teleport_position : Vector2 = Vector2.ZERO
 var is_teleporting: bool = false
 
+@export var hover_scale : float = 1.5
+@export var pickup_scale : float = 2
+@onready var follow_node : RigidFollowNode = $RigidFollowNode
+
 var is_airborn : bool = false
 
 func _integrate_forces(state):
@@ -25,3 +29,20 @@ func _apply_friction():
 	var friction : float = air_friction if is_airborn else table_friction
 	angular_velocity = lerp(angular_velocity, 0.0, friction)
 	linear_velocity = lerp(linear_velocity, Vector2.ZERO, friction)
+	
+func hover():
+	scale = Vector2.ONE * hover_scale
+
+func unhover():
+	scale = Vector2.ONE
+	
+func pick_up(hand : Hand):
+	scale = Vector2.ONE * pickup_scale
+	follow_node.active = true
+	follow_node.followed = hand
+	
+func let_go():
+	scale = Vector2.ONE
+	follow_node.active = false
+	follow_node.followed = null
+	

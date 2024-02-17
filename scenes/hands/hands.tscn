@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjiujhb3mbxhn"]
+
+[ext_resource type="PackedScene" uid="uid://cyj6fe6mcy18o" path="res://scenes/hands/arm.tscn" id="1_8jp7g"]
+[ext_resource type="Resource" uid="uid://bolgknadxovyf" path="res://resources/side/Right.tres" id="2_vliae"]
+
+[node name="hands" type="Node"]
+
+[node name="LeftArm" parent="." instance=ExtResource("1_8jp7g")]
+
+[node name="RightArm" parent="." instance=ExtResource("1_8jp7g")]
+
+[node name="Body" parent="RightArm/Hand" index="1"]
+side = ExtResource("2_vliae")
+
+[editable path="LeftArm"]
+[editable path="RightArm"]
