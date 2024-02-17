@@ -3,16 +3,19 @@
 [ext_resource type="Script" path="res://scripts/score/score_line.gd" id="1_e7q85"]
 
 [node name="ScoreLign" type="Node2D"]
+scale = Vector2(5, 5)
 script = ExtResource("1_e7q85")
 
 [node name="NameLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Name"
+offset_left = -47.6
+offset_top = -0.2
+offset_right = -7.6
+offset_bottom = 27.8
+theme_override_font_sizes/font_size = 20
+text = "ABC"
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 60.0
-offset_top = 1.0
-offset_right = 103.0
-offset_bottom = 24.0
-text = "Score"
+offset_right = 63.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 20
+text = "1204"

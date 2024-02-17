@@ -19,7 +19,7 @@ func set_score_board(scores : Dictionary):
 		line.set_score(best_score)
 		line._set_name(best_player)
 		add_child(line)
-		line.position = Vector2(0,score_n*50)
+		line.position = Vector2(0,score_n*100-200)
 
 func get_best(scores : Dictionary) -> String:
 	var best_index:String
