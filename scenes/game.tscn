@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://7ce888h1fjw1"]
+[gd_scene load_steps=10 format=3 uid="uid://7ce888h1fjw1"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuffs.tscn" id="3_uotv3"]
@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://do2muwwrnusnv" path="res://resources/grade/Good.tres" id="6_diick"]
 [ext_resource type="Resource" uid="uid://dpp166k3o7m2k" path="res://resources/grade/Bad.tres" id="7_3rfdo"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
-[ext_resource type="PackedScene" uid="uid://dbbqpr32frnaj" path="res://score.tscn" id="9_8uecg"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="9_siahs"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h28pv"]
@@ -33,5 +32,3 @@ grade_list = Array[Resource("res://scripts/resource/grade.gd")]([ExtResource("5_
 script = ExtResource("8_iq5pv")
 
 [node name="hands" parent="." instance=ExtResource("9_siahs")]
-
-[node name="score" parent="." instance=ExtResource("9_8uecg")]
