@@ -8,8 +8,8 @@ class_name GameManager extends Node
 @onready var clock : Clock = $hands/LeftArm/Hand/HandSprite/Clock
 
 var recognition_phase_duration: float = 3
-var ordering_phase_duration: float = 1
-var black_screen_duration: float = 1
+var ordering_phase_duration: float = 3
+var black_screen_duration: float = 0.5
 
 func _ready():
 	round_manager.new_round()

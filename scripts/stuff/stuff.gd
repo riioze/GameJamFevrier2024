@@ -7,12 +7,16 @@ class_name Stuff extends RigidBody2D
 
 var teleport_position : Vector2 = Vector2.ZERO
 var is_teleporting: bool = false
-
+var is_changing_position: bool = false
 var is_changing_scale : bool = false
 
+var new_position : Vector2 :
+	set(value) :
+		new_position = value
+		is_changing_position = true
+	
 var new_scale : float :
 	set(value):
-		#is_changing_scale = 
 		get_child(0).scale = Vector2.ONE * value
 		get_child(1).scale = Vector2.ONE * value
 		new_scale = value
@@ -25,15 +29,13 @@ var is_picked_up : bool = false
 
 var is_airborn : bool = false
 
-#func _ready():
-	#sprite_node.texture = texture_list.pick_random()
-
 func _integrate_forces(state):
-	if is_teleporting:
+	if is_changing_position:
+		if follow_node.followed != null:
+			follow_node.followed.let_go()
 		var t = state.get_transform()
-		t.origin.x = teleport_position.x
-		t.origin.y =  teleport_position.y
-		is_teleporting = false
+		t.origin = new_position
+		is_changing_position = false
 		state.set_transform(t)
 
 func _physics_process(delta):
@@ -45,22 +47,18 @@ func _apply_friction():
 	linear_velocity = lerp(linear_velocity, Vector2.ZERO, friction)
 	
 func hover():
-	#print("hover")
 	new_scale = hover_scale
 
 func unhover():
-	#print("hunover")
 	new_scale = 1
 	
 func pick_up(hand : Hand):
-	#print("pick up")
 	is_picked_up = true
 	follow_node.active = true
 	follow_node.followed = hand
 	new_scale = pickup_scale
 	
 func let_go():
-	#print("let go")
 	is_picked_up = false
 	follow_node.active = false
 	follow_node.followed = null
@@ -68,3 +66,8 @@ func let_go():
 	
 	if has_method("let_go_bis"):
 		call("let_go_bis")
+		
+func delete():
+	if follow_node.followed != null:
+		follow_node.followed.let_go()
+	queue_free()
