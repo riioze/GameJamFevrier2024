@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://w6urfwl08wuc"]
+[gd_scene load_steps=3 format=3 uid="uid://w6urfwl08wuc"]
 
 [ext_resource type="PackedScene" uid="uid://7ce888h1fjw1" path="res://scenes/game.tscn" id="1_meu0d"]
+[ext_resource type="PackedScene" uid="uid://dbbqpr32frnaj" path="res://scenes/score.tscn" id="1_uf0fv"]
 
 [node name="main" type="Node"]
+
+[node name="score" parent="." instance=ExtResource("1_uf0fv")]
 
 [node name="game" parent="." instance=ExtResource("1_meu0d")]

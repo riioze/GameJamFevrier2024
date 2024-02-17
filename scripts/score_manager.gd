@@ -1,6 +1,5 @@
 class_name ScoreManager extends Node
 
-
 var score_node: Node
 
 var score_dict = {}
@@ -21,7 +20,8 @@ func init():
 
 func load_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt",FileAccess.READ)
-	var content : String = file.get_as_text().replace('\n','')	file.close()
+	var content : String = file.get_as_text().replace('\n','')
+	file.close()
 	if content == "":
 		
 		return

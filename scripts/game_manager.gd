@@ -3,7 +3,7 @@ extends Node
 @onready var stuff_manager : StuffManager = $stuffs
 @onready var sanity_manager : SanityManager = $sanity
 @onready var eyes : Eyes = $Eyes
-#@onready var score_manager : ScoreManager = $score
+@onready var score_manager : ScoreManager = SceneManager.score
 
 var recognition_phase_duration: float = 3
 var ordering_phase_duration: float = 1
@@ -30,5 +30,5 @@ func process_round():
 
 func loose():
 	print("You loose")
-	#score_manager.init()
+	score_manager.init()
 	

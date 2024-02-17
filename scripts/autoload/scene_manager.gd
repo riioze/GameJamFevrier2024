@@ -4,6 +4,8 @@ var root
 var main : Node
 var game : Node :
 	get : return main.get_node("game")
+var score : Node :
+	get : return main.get_node("score")
 	
 var web : bool = false
 
