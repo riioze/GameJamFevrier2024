@@ -33,6 +33,8 @@ var picked_stuff : Stuff
 @export var closed_texture : Texture
 @onready var sprite : Sprite2D = $"../HandSprite"
 
+var active : bool = true
+
 func _ready():
 	sprite.flip_h = side.is_mirrored
 	sprite.texture = default_texture
@@ -70,6 +72,9 @@ func get_closest_stuff() -> Stuff:
 	return closest
 		
 func _process(delta):
+	if !active : 
+		input_direction = Vector2.ZERO
+		return
 	#print(shoulder_origin.distance_to(position))
 	if shoulder_origin.distance_to(position) > arm_lenght + forearm_lenght:
 		input_direction = position.direction_to(shoulder_origin).normalized()

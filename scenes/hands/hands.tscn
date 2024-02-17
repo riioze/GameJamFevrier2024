@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjiujhb3mbxhn"]
+[gd_scene load_steps=14 format=3 uid="uid://bjiujhb3mbxhn"]
 
 [ext_resource type="PackedScene" uid="uid://cyj6fe6mcy18o" path="res://scenes/hands/arm.tscn" id="1_8jp7g"]
+[ext_resource type="Script" path="res://scripts/hands/hands_manager.gd" id="1_sajdo"]
 [ext_resource type="Resource" uid="uid://bolgknadxovyf" path="res://resources/side/Right.tres" id="2_vliae"]
 [ext_resource type="Script" path="res://scripts/clock.gd" id="3_yq33q"]
 [ext_resource type="Texture2D" uid="uid://btjlx01r04010" path="res://sprites/watch/WatchFrame1.png" id="4_ocoh7"]
@@ -14,16 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://qeygxjdx4ki3" path="res://sprites/watch/WatchFrame9.png" id="12_85eio"]
 
 [node name="hands" type="Node"]
+script = ExtResource("1_sajdo")
 
 [node name="LeftArm" parent="." instance=ExtResource("1_8jp7g")]
 
-[node name="Clock" type="Sprite2D" parent="LeftArm/Hand/HandSprite" index="0"]
-position = Vector2(0, 416)
+[node name="RightArm" parent="." instance=ExtResource("1_8jp7g")]
+
+[node name="Clock" type="Sprite2D" parent="RightArm/Hand/HandSprite" index="1"]
+z_index = 20
+position = Vector2(-86, 231)
 texture = ExtResource("4_ocoh7")
 script = ExtResource("3_yq33q")
 texture_list = Array[Texture]([ExtResource("4_ocoh7"), ExtResource("5_onse4"), ExtResource("6_0nwty"), ExtResource("7_o3dnv"), ExtResource("8_qwm1r"), ExtResource("9_stt50"), ExtResource("10_oalgf"), ExtResource("11_j12tk"), ExtResource("12_85eio")])
-
-[node name="RightArm" parent="." instance=ExtResource("1_8jp7g")]
 
 [node name="Body" parent="RightArm/Hand" index="1"]
 side = ExtResource("2_vliae")
