@@ -12,24 +12,29 @@ script = ExtResource("1_m5jx5")
 
 [node name="Score" type="Node2D" parent="."]
 position = Vector2(960, 300)
-scale = Vector2(800, 200)
 
 [node name="ScoreBackGround" type="Sprite2D" parent="Score"]
+scale = Vector2(800, 200)
 texture = SubResource("PlaceholderTexture2D_7uy4o")
 
 [node name="ScoreLabel" type="Label" parent="Score"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "vxc"
+offset_left = -400.0
+offset_top = -100.0
+offset_right = 400.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 146
 
 [node name="PlayerName" type="Node2D" parent="."]
 position = Vector2(960, 600)
-scale = Vector2(600, 150)
 script = ExtResource("2_o2h1k")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerName"]
+scale = Vector2(600, 150)
 texture = SubResource("PlaceholderTexture2D_1ju7a")
 
 [node name="NameLabel" type="Label" parent="PlayerName"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -300.0
+offset_top = -75.0
+offset_right = 297.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 110

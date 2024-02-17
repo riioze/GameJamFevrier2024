@@ -4,6 +4,7 @@ class_name ScoreManager extends Node
 
 var score_dict = {}
 var in_score : bool
+var name_set : bool
 var score : int = 0
 var player_name : String = "test2"
 
@@ -11,15 +12,15 @@ var player_name : String = "test2"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	in_score = true
+	name_set = false
 	
 	display_score()
 
 	load_scores()
-	save_scores()
 
 func display_score():
 	var score_label: Label = $Score/ScoreLabel
-	score_label.text = "Score : " + str(score)
+	score_label.set_text("Score : " + str(score))
 	print(score_label.text)
 
 func load_scores():
@@ -38,6 +39,9 @@ func load_scores():
 
 func set_score(score_to_set : int):
 	score = score_to_set
+func _set_name(name_to_set: String):
+	player_name = name_to_set
+	name_set = true
 
 func save_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt", FileAccess.WRITE)
