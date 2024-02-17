@@ -14,6 +14,7 @@ func close() -> bool:
 	modulate.a = 255
 	visible = true
 	play("close")
+	AudioManager.play("BiteSound.mp3")
 	await TimeManager.sleep(2)
 	day_label.visible = true
 	day_label.text = str(SceneManager.game.round_manager.day)

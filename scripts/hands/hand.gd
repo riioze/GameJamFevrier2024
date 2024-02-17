@@ -109,12 +109,15 @@ func _input(event):
 		
 func let_go():
 	if picked_stuff == null : return
+	AudioManager.play("DropSound.wav")
 	picked_stuff.let_go()
 	picked_stuff = null
 	sprite.texture = default_texture
 	
 func pick_up():
-	if closest_stuff == null : return
+	if closest_stuff == null or picked_stuff != null : return
+	print("pick up")
+	AudioManager.play("GrabSound.mp3", 1, 0, 0.2)
 	picked_stuff = closest_stuff
 	picked_stuff.pick_up(self)
 	sprite.texture = closed_texture

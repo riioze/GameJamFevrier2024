@@ -11,7 +11,7 @@ var isMute = false
 var music_bus
 #var music_pitch_effect
 
-#var music = preload("res://audio/musics/BeepBox-test.wav")
+var music = preload("res://audio/musics/Ost.wav")
 
 func _ready():
 	music_bus = AudioServer.get_bus_index("Music")
@@ -27,7 +27,7 @@ func play(clip_name, count = 1, time = 0,db = 1):
 	var s = sound_r.instantiate()
 	sounds_node.add_child(s)
 	
-	var clip = sound_path + clip_name + ".wav"
+	var clip = sound_path + clip_name
 	
 	if(count > 1):
 		var clips = []
@@ -46,7 +46,7 @@ func mute_music():
 	isMute = !isMute
 
 func start_game_music():
-	#music_node.stream = music
+	music_node.stream = music
 	#set_music_speed(1)
 	music_node.play()
 	
