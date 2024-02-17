@@ -5,9 +5,11 @@ size = Vector2(1920, 1080)
 
 [node name="main" type="Node"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.376471, 0.266667, 0.305882, 1)
+z_index = -100
 position = Vector2(960, 540)
 texture = SubResource("PlaceholderTexture2D_sj4ti")
-
-[node name="Camera2D" type="Camera2D" parent="Background"]
