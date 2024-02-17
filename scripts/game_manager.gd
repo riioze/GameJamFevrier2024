@@ -29,7 +29,7 @@ func process_round():
 	await clock.run_clock(round_manager.recognition_duration)
 	stuff_manager.check_stuff_list_positions()
 	
-	if loose_condition():
+	if loose_condition() or true:
 		loose()
 		return
 		

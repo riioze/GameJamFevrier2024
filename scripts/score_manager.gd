@@ -21,7 +21,7 @@ func _ready():
 
 func display_score():
 	var score_label: Label = $SettingName/Score/ScoreLabel
-	score_label.set_text("Score : " + str(score))
+	score_label.set_text(str(score))
 
 func load_scores():
 	var file : FileAccess = FileAccess.open("res://save_game.txt",FileAccess.READ)
