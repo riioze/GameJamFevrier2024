@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c10ad6r75j0st"]
 
 [ext_resource type="Script" path="res://scripts/stuff/stuff_button.gd" id="1_1qm7u"]
-[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="2_inlb0"]
+[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/Kiwi.png" id="2_doj3s"]
 [ext_resource type="Script" path="res://scripts/node/rigid_follow_node.gd" id="3_288r1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgi8a"]
@@ -18,7 +18,7 @@ script = ExtResource("1_1qm7u")
 shape = SubResource("CircleShape2D_vgi8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_inlb0")
+texture = ExtResource("2_doj3s")
 
 [node name="RigidFollowNode" type="Node" parent="."]
 script = ExtResource("3_288r1")

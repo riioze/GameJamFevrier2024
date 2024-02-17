@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkjy1n2vkd507"]
+[gd_scene load_steps=10 format=3 uid="uid://bkjy1n2vkd507"]
 
 [ext_resource type="Script" path="res://scripts/stuff/stuff_manager.gd" id="1_gbr6t"]
 [ext_resource type="Texture2D" uid="uid://7ufvtrtnvcj8" path="res://sprites/stuff/Cocktail.png" id="2_1pgm4"]
-[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/KiwiV1.png" id="3_5fm6y"]
+[ext_resource type="Texture2D" uid="uid://dhbqq03xkdxsg" path="res://sprites/stuff/Beef.png" id="2_tnh3l"]
+[ext_resource type="Texture2D" uid="uid://bsb0f2xy546eg" path="res://sprites/stuff/Cucumber.png" id="4_q300w"]
 [ext_resource type="Texture2D" uid="uid://bq4kx1cqkdmqi" path="res://sprites/stuff/Ramen.png" id="4_tj0mk"]
+[ext_resource type="Texture2D" uid="uid://cbcrobav06m08" path="res://sprites/stuff/Eggplant.png" id="5_w2ngc"]
+[ext_resource type="Texture2D" uid="uid://cgqhomojq8h0p" path="res://sprites/stuff/Grapefruit.png" id="6_te0m5"]
+[ext_resource type="Texture2D" uid="uid://bijb28icxn5d" path="res://sprites/stuff/Kiwi.png" id="7_iej17"]
+[ext_resource type="Texture2D" uid="uid://buhg28kmpjfgv" path="res://sprites/stuff/Strawberry.png" id="9_kd0i1"]
 
 [node name="stuffs" type="Node"]
 script = ExtResource("1_gbr6t")
-texture_list = Array[Texture]([ExtResource("2_1pgm4"), ExtResource("3_5fm6y"), ExtResource("4_tj0mk")])
+texture_list = Array[Texture]([ExtResource("2_tnh3l"), ExtResource("2_1pgm4"), ExtResource("4_q300w"), ExtResource("5_w2ngc"), ExtResource("6_te0m5"), ExtResource("7_iej17"), ExtResource("4_tj0mk"), ExtResource("9_kd0i1")])
