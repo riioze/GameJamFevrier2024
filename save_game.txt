@@ -1,1 +1,1 @@
-FRA,1
+FRA,1;NBH,7;KJB,6

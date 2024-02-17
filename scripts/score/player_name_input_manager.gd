@@ -11,11 +11,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if player_name == "":
-		label.set_text("Your name")
-	else:
+	if player_name != "":
 		label.set_text(player_name)
 
+		
 func _input(event):
 	
 	if event is InputEventKey and event.is_pressed():
@@ -26,4 +25,6 @@ func _input(event):
 			score_manager.save_scores()
 		elif player_name.length()<3 and key_text.length() == 1:
 			player_name+=key_text
+		elif player_name.length()>0 and key_text == "Backspace":
+			player_name = player_name.left(player_name.length()-1)
 			

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_3htwk"]
 [ext_resource type="PackedScene" uid="uid://bkjy1n2vkd507" path="res://scenes/stuff/stuffs.tscn" id="2_fvvv8"]
-[ext_resource type="PackedScene" uid="uid://bmq8ca2ph2iry" path="res://scenes/sanity.tscn" id="3_wh5sc"]
+[ext_resource type="PackedScene" uid="uid://bc5ifpx46h014" path="res://scenes/sanity.tscn" id="3_wh5sc"]
 [ext_resource type="SpriteFrames" uid="uid://dg3d4jlayjqx" path="res://animation/bite_animation.tres" id="7_us1jw"]
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
 [ext_resource type="Script" path="res://scripts/transition/bite.gd" id="8_yk1h0"]
@@ -2765,7 +2765,7 @@ cache/0/250/0/kerning_overrides/250/0 = Vector2(0, 0)
 line_spacing = 10.0
 font = SubResource("FontFile_kh74h")
 font_size = 250
-font_color = Color(0.823529, 0.192157, 0.317647, 0.835294)
+font_color = Color(1, 0, 0, 1)
 
 [node name="game" type="Node"]
 script = ExtResource("1_3htwk")
