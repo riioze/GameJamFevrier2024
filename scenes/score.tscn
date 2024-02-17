@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbbqpr32frnaj"]
+[gd_scene load_steps=7 format=3 uid="uid://dbbqpr32frnaj"]
 
 [ext_resource type="Script" path="res://scripts/score_manager.gd" id="1_m5jx5"]
 [ext_resource type="Script" path="res://scripts/score/player_name_input_manager.gd" id="2_o2h1k"]
 [ext_resource type="Script" path="res://scripts/score/score_board.gd" id="3_4qytx"]
-[ext_resource type="PackedScene" uid="uid://64smh70ocii7" path="res://scenes/score_line.tscn" id="4_mxkuh"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7uy4o"]
 
@@ -61,7 +60,3 @@ offset_bottom = -280.0
 theme_override_font_sizes/font_size = 141
 text = "Scoreboard
 "
-
-[node name="ScoreLign" parent="ScoreBoard" instance=ExtResource("4_mxkuh")]
-position = Vector2(-387, -282)
-scale = Vector2(7, 7)
