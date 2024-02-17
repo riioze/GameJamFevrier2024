@@ -56,7 +56,7 @@ func get_random_list_id(count : int, list_count : int) -> Array[int]:
 	
 func round_setup(count) -> void:
 	clear_stuff()
-	count = 20
+	#count = 20
 	stuff_count = min(texture_list.size(), count)
 	stuff_list = make_stuff_list(stuff_count)
 	initial_position_list = make_position_list(stuff_count)

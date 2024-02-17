@@ -14,7 +14,7 @@ enum hand_side {Left, Right}
 
 @export var side : Side
 
-var speed : float = 70000
+var speed : float = 80000
 
 var teleport_position : Vector2 = Vector2.ZERO
 var is_teleporting: bool = false

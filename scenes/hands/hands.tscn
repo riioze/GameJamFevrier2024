@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjiujhb3mbxhn"]
+[gd_scene load_steps=15 format=3 uid="uid://bjiujhb3mbxhn"]
 
 [ext_resource type="PackedScene" uid="uid://cyj6fe6mcy18o" path="res://scenes/hands/arm.tscn" id="1_8jp7g"]
 [ext_resource type="Script" path="res://scripts/hands/hands_manager.gd" id="1_sajdo"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dpo08u614kweu" path="res://sprites/watch/WatchFrame7.png" id="10_oalgf"]
 [ext_resource type="Texture2D" uid="uid://ctf58jpnf47pi" path="res://sprites/watch/WatchFrame8.png" id="11_j12tk"]
 [ext_resource type="Texture2D" uid="uid://qeygxjdx4ki3" path="res://sprites/watch/WatchFrame9.png" id="12_85eio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj4o6"]
+size = Vector2(3000, 20)
 
 [node name="hands" type="Node"]
 script = ExtResource("1_sajdo")
@@ -30,6 +33,43 @@ texture_list = Array[Texture]([ExtResource("4_ocoh7"), ExtResource("5_onse4"), E
 
 [node name="Body" parent="RightArm/Hand" index="1"]
 side = ExtResource("2_vliae")
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="West" type="StaticBody2D" parent="Walls"]
+position = Vector2(-1050, 0)
+rotation = 1.5708
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/West"]
+shape = SubResource("RectangleShape2D_hj4o6")
+
+[node name="East" type="StaticBody2D" parent="Walls"]
+position = Vector2(1050, 0)
+rotation = 1.5708
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/East"]
+shape = SubResource("RectangleShape2D_hj4o6")
+
+[node name="North" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 650)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/North"]
+shape = SubResource("RectangleShape2D_hj4o6")
+
+[node name="South" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, -650)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/South"]
+shape = SubResource("RectangleShape2D_hj4o6")
 
 [editable path="LeftArm"]
 [editable path="RightArm"]
