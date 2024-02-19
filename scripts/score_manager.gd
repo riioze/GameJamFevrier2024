@@ -9,7 +9,6 @@ var name_set : bool
 var score : int = 0
 var player_name : String = "test2"
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	in_score = true
@@ -34,10 +33,8 @@ func load_scores():
 		var score = s.split(',')[1]
 		score_dict[name] = score
 		
-
 func set_score(score_to_set : int):
 	score = score_to_set
-	
 	
 func _set_name(name_to_set: String):
 	player_name = name_to_set
@@ -63,7 +60,6 @@ func save_scores():
 	file.store_string(to_store)
 	file.close()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if !(name_set):
 		display_score()

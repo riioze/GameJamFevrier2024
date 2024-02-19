@@ -17,8 +17,9 @@ func close() -> bool:
 	AudioManager.play("BiteSound.mp3")
 	await TimeManager.sleep(2)
 	day_label.visible = true
-	day_label.text = str(SceneManager.game.round_manager.day)
-	#SceneManager.game.hands_manager.activate(false)
+	day_label.text = str(SceneManager.game.round_manager.day + 1)
+	
+	SceneManager.unload_scene(SceneManager.menu)
 	SceneManager.game.round_manager.new_round()
 	#disolve = true
 	await TimeManager.sleep(1)

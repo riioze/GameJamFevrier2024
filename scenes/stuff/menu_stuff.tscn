@@ -26,7 +26,7 @@ action_node = NodePath("../Action")
 texture = ExtResource("3_nd5cs")
 
 [node name="QuitButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
-position = Vector2(451, 699)
+position = Vector2(359, 783)
 action_node = NodePath("../Action")
 action_type = 1
 
@@ -34,7 +34,7 @@ action_type = 1
 texture = ExtResource("4_2nfrg")
 
 [node name="CreditButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
-position = Vector2(1506, 726)
+position = Vector2(1578, 838)
 action_node = NodePath("../Action")
 action_type = 3
 
@@ -42,7 +42,7 @@ action_type = 3
 texture = ExtResource("5_1gth0")
 
 [node name="MuteButton" parent="." node_paths=PackedStringArray("action_node") instance=ExtResource("2_d7lhk")]
-position = Vector2(1551, 333)
+position = Vector2(1467, 525)
 action_node = NodePath("../Action")
 action_type = 2
 

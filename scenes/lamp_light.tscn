@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://qb4h2gkts4yw"]
+
+[ext_resource type="Texture2D" uid="uid://fxtob8m3s41t" path="res://sprites/menu/LightMenu.png" id="1_tkf1h"]
+[ext_resource type="Script" path="res://scripts/lamp_light.gd" id="2_cynn4"]
+
+[node name="LampLight" type="Sprite2D"]
+z_index = 200
+texture = ExtResource("1_tkf1h")
+script = ExtResource("2_cynn4")
+alpha_max = 0.5
+flicker_time_min = 0.2
+flicker_time_max = 1.0

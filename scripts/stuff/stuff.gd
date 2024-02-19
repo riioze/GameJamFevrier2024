@@ -52,7 +52,7 @@ func hover():
 	new_scale = hover_scale
 
 func unhover():
-	print("unhover")
+	#print("unhover")
 	new_scale = defaultScale
 	
 func pick_up(hand : Hand):

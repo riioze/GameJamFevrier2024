@@ -16,5 +16,8 @@ func let_go_bis():
 func exec_action():
 	match action_type:
 		action.Quit : get_tree().quit()
-		#action.Credit : SceneManager.load_credit()
-		_ : SceneManager.load_game()
+		action.Credit : SceneManager.load_credit()
+		action.Mute : AudioManager.mute_music()
+		_ : 
+			await TimeManager.sleep(0.5)
+			SceneManager.load_game()

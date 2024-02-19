@@ -22,7 +22,7 @@ func set_score_board(scores : Dictionary):
 		var best_player: String = get_best(scores)
 		var best_score: int = int(scores[best_player])
 		scores.erase(best_player)
-		var line : ScoreLign = score_line.instantiate()
+		var line : ScoreLine = score_line.instantiate()
 		line.set_score(best_score)
 		line._set_name(best_player)
 		add_child(line)

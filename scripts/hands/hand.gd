@@ -3,7 +3,7 @@ class_name Hand extends RigidBody2D
 var input_direction : Vector2 = Vector2.ZERO	
 
 var hand_origin : Vector2 = Vector2(1920/2, 1080/2)
-var hand_separation_origin : float = 100
+var hand_separation_origin : float = 300
 
 var shoulder_origin : Vector2 = Vector2(1920/2, 1080)
 var shoulder_separation_origin : float = 1920 /2

@@ -11,8 +11,13 @@ class_name GameManager extends Node
 @onready var bite : Bite = $Transitions/Bite
 @onready var score : int = 0
 
+func _input(event):
+	if event.is_action_pressed("Back"):
+		SceneManager.load_menu()
+
 func _ready():
-	round_manager.new_round()
+	hands_manager.activate(false)
+	await bite.close()
 	
 func loose_condition() -> bool:
 	return sanity_manager.sanity < sanity_manager.min_sanity
@@ -30,17 +35,16 @@ func process_round():
 	await eyes.open()
 	await clock.run_clock(round_manager.ordering_duration)
 	await stuff_manager.check_stuff_list_positions()
-	print(score)
+	#print(score)
 	await TimeManager.sleep(1)
 	
-	if loose_condition():
+	if loose_condition() or true:
 		loose()
 		return
 	
 	await bite.close()
 
 func loose():
-	print("You loose")
+	#print("You loose")
 	SceneManager.load_score()
-	SceneManager.score.set_score(score)
 	

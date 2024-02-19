@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://35qsbc85q6sm"]
+[gd_scene load_steps=6 format=3 uid="uid://35qsbc85q6sm"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_sc1lf"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="2_hu80o"]
 [ext_resource type="PackedScene" uid="uid://bciqjxdj147b1" path="res://scenes/stuff/menu_stuff.tscn" id="3_8pch8"]
 [ext_resource type="Texture2D" uid="uid://df7mvrfwnpu18" path="res://sprites/menu/Menu.png" id="4_sltmp"]
+[ext_resource type="PackedScene" uid="uid://qb4h2gkts4yw" path="res://scenes/lamp_light.tscn" id="5_e80nu"]
 
 [node name="menu" type="Node"]
 script = ExtResource("1_sc1lf")
@@ -16,3 +17,5 @@ script = ExtResource("1_sc1lf")
 z_index = -90
 position = Vector2(960, 540)
 texture = ExtResource("4_sltmp")
+
+[node name="LampLight" parent="Background" instance=ExtResource("5_e80nu")]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scripts/round_manager.gd" id="8_iq5pv"]
 [ext_resource type="Script" path="res://scripts/transition/bite.gd" id="8_yk1h0"]
 [ext_resource type="PackedScene" uid="uid://bjiujhb3mbxhn" path="res://scenes/hands/hands.tscn" id="9_siahs"]
-[ext_resource type="PackedScene" uid="uid://cp6luodis5shj" path="res://eyes.tscn" id="13_d4ts6"]
+[ext_resource type="PackedScene" uid="uid://cp6luodis5shj" path="res://scenes/eyes.tscn" id="13_d4ts6"]
 
 [sub_resource type="FontFile" id="FontFile_kh74h"]
 cache/0/16/0/ascent = 0.0
