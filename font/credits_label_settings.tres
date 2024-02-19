@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ptwbget85omi"]
+
+[ext_resource type="FontFile" uid="uid://sliobagas4q0" path="res://font/ChalkDust.ttf" id="1_1r5m4"]
+
+[resource]
+line_spacing = 10.0
+font = ExtResource("1_1r5m4")
+font_size = 100

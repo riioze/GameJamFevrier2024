@@ -7,11 +7,6 @@ class_name ScoreLine extends Node2D
 var score: int
 var player_name: String
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 func set_score(score_to_set:int):
 	score = score_to_set
 	#print(score)

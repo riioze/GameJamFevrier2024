@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://64smh70ocii7"]
+
+[ext_resource type="Script" path="res://scripts/score/score_line.gd" id="1_csavu"]
+[ext_resource type="LabelSettings" uid="uid://ptwbget85omi" path="res://font/credits_label_settings.tres" id="2_r425p"]
+
+[node name="ScoreLign" type="Node2D"]
+script = ExtResource("1_csavu")
+
+[node name="NameLabel" type="Label" parent="."]
+offset_left = -259.0
+offset_right = 107.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 20
+text = "MMM"
+label_settings = ExtResource("2_r425p")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 74.0
+offset_right = 346.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 20
+text = "9999"
+label_settings = ExtResource("2_r425p")

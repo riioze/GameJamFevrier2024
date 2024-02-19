@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp6luodis5shj"]
+
+[ext_resource type="SpriteFrames" uid="uid://m4j7y7aei1fe" path="res://animation/eyes_animation.tres" id="1_2u0bq"]
+[ext_resource type="Script" path="res://scripts/transition/eyes.gd" id="2_pgo6v"]
+
+[node name="Eyes" type="AnimatedSprite2D"]
+visible = false
+z_index = 300
+position = Vector2(960, 540)
+sprite_frames = ExtResource("1_2u0bq")
+animation = &"close"
+script = ExtResource("2_pgo6v")

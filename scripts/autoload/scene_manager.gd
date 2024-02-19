@@ -11,7 +11,7 @@ var web : bool = false
 
 var game_scene = preload("res://scenes/game.tscn")
 var menu_scene = preload("res://scenes/menu.tscn")
-var score_scene = preload("res://scenes/score.tscn")
+var score_scene = preload("res://scenes/score/score.tscn")
 var credits_scene = preload("res://scenes/credits.tscn")
 
 func _ready() -> void:

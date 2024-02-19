@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce1wkk8qdjp30"]
+
+[ext_resource type="SpriteFrames" uid="uid://dg3d4jlayjqx" path="res://animation/bite_animation.tres" id="1_gfpq0"]
+[ext_resource type="Script" path="res://scripts/transition/bite.gd" id="2_ca40l"]
+[ext_resource type="LabelSettings" uid="uid://rcc1ht41hf60" path="res://font/day_label_settings.tres" id="3_08aim"]
+
+[node name="Bite" type="AnimatedSprite2D"]
+visible = false
+z_index = 300
+sprite_frames = ExtResource("1_gfpq0")
+animation = &"close"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("2_ca40l")
+
+[node name="Day" type="Label" parent="."]
+visible = false
+offset_left = 42.0
+offset_top = -96.0
+offset_right = 531.0
+offset_bottom = 261.0
+text = "999"
+label_settings = ExtResource("3_08aim")

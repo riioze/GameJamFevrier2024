@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://rcc1ht41hf60"]
+
+[ext_resource type="FontFile" uid="uid://sliobagas4q0" path="res://font/ChalkDust.ttf" id="1_vsic2"]
+
+[resource]
+line_spacing = 10.0
+font = ExtResource("1_vsic2")
+font_size = 110
+font_color = Color(0.85098, 0.415686, 0.466667, 1)

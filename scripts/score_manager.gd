@@ -8,9 +8,10 @@ var in_score : bool
 var name_set : bool
 var score : int = 0
 var player_name : String = "test2"
-
+@onready var eyes : Eyes = SceneManager.main.get_node("Transitions/Eyes")
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	eyes.open()
 	in_score = true
 	name_set = false
 	score_board_node.visible = false

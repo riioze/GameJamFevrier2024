@@ -6,7 +6,7 @@ var score_line
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	score_line= preload("res://scenes/score_line.tscn") # Replace with function body.
+	score_line= preload("res://scenes/score/score_line.tscn") # Replace with function body.
 
 
 func _set_visible():

@@ -7,7 +7,7 @@ class_name GameManager extends Node
 @onready var hands_manager : HandsManager = $hands
 
 @onready var clock : Clock = $hands/RightArm/Hand/HandSprite/Clock
-@onready var eyes : Eyes = $Transitions/Eyes
+@onready var eyes : Eyes = SceneManager.main.get_node("Transitions/Eyes")
 @onready var bite : Bite = $Transitions/Bite
 @onready var score : int = 0
 
@@ -16,6 +16,8 @@ func _input(event):
 		SceneManager.load_menu()
 
 func _ready():
+	loose()
+	return
 	hands_manager.activate(false)
 	await bite.close()
 	
@@ -38,13 +40,13 @@ func process_round():
 	#print(score)
 	await TimeManager.sleep(1)
 	
-	if loose_condition() or true:
+	if loose_condition():
 		loose()
 		return
 	
 	await bite.close()
 
 func loose():
-	#print("You loose")
+	await eyes.close()
 	SceneManager.load_score()
 	

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://w6urfwl08wuc"]
+[gd_scene load_steps=3 format=3 uid="uid://w6urfwl08wuc"]
 
 [ext_resource type="Texture2D" uid="uid://0uwcymgiqi2i" path="res://sprites/Table.png" id="1_8w7vx"]
+[ext_resource type="PackedScene" uid="uid://cp6luodis5shj" path="res://scenes/transitions/eyes.tscn" id="2_gcuwb"]
 
 [node name="main" type="Node"]
 
@@ -18,3 +19,9 @@ texture = ExtResource("1_8w7vx")
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio"]
 volume_db = -5.0
+
+[node name="Transitions" type="Node2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Eyes" parent="Transitions" instance=ExtResource("2_gcuwb")]
+position = Vector2(0, 0)
